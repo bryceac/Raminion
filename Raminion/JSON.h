@@ -10,11 +10,11 @@
 
 @interface JSON : NSObject
 {
-    NSArray* json;
+    NSDictionary* json;
 }
 
 - (void)createJSON:(NSString*)f;
 
-- (NSArray*)json;
+- (NSDictionary*)json;
 
 @end

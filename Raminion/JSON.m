@@ -27,14 +27,13 @@
 - (void)createJSON:(NSString *)f
 {
     NSString* path = [[NSBundle mainBundle] pathForResource:f ofType:@"json"];
-    NSString* content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     
-    NSData* data = [content dataUsingEncoding:NSUTF8StringEncoding];
+    NSData* data = [NSData dataWithContentsOfFile:path];
     
     json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 }
 
-- (NSMutableArray*)json
+- (NSDictionary*)json
 {
     return json;
 }
