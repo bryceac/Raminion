@@ -10,4 +10,26 @@
 
 @implementation Shuffle
 
+- (id) initWithArray:(NSMutableArray*)a
+{
+    if (self = [super init])
+    {
+        [self shuffle:a];
+    }
+    return self;
+}
+
+- (NSMutableArray*)shuffle:(NSMutableArray *)s
+{
+    for (int i = 0; i < [s count]; i++)
+    {
+        int randValue = (arc4random() % [s count] -1);
+        id temp = s[i];
+        
+        s[i] = s[randValue];
+        s[randValue] = temp;
+    }
+    return s;
+}
+
 @end

@@ -10,4 +10,6 @@
 
 @interface Shuffle : NSObject
 
+- (NSMutableArray*)shuffle:(NSMutableArray*)s;
+
 @end
