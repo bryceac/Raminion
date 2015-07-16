@@ -61,4 +61,14 @@
     return potion;
 }
 
+- (void)setCost:(int)c
+{
+    cost = c;
+}
+
+- (int)cost
+{
+    return cost;
+}
+
 @end

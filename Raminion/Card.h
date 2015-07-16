@@ -12,6 +12,7 @@
 {
     NSString *name, *collection;
     NSArray* kind;
+    int cost;
     BOOL potion;
 }
 
@@ -20,11 +21,13 @@
 - (void)setCollection:(NSString*)s;
 - (void)setPotion:(BOOL)b;
 - (void)setKind:(NSArray*)k;
+- (void)setCost:(int)c;
 
 // accessor methods
 - (NSString*)name;
 - (NSString*)collection;
 - (BOOL)potion;
 - (NSArray*)kind;
+- (int)cost;
 
 @end
