@@ -12,11 +12,17 @@
 
 - (id) init
 {
+    return [self initWithName:nil collection:nil cost:0 potion:false kind:nil];
+}
+
+- (id) initWithName:(NSString*)n collection:(NSString*)c cost:(int)f potion:(BOOL)b kind:(NSArray*)k
+{
     if (self = [super init]) {
-        [self setName:nil];
-        [self setCollection:nil];
-        [self setKind:nil];
-        [self setPotion:false];
+        [self setName:n];
+        [self setCollection:c];
+        [self setCost:f];
+        [self setPotion:b];
+        [self setKind:k];
     }
     return self;
 }
