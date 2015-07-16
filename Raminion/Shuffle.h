@@ -10,6 +10,8 @@
 
 @interface Shuffle : NSObject
 
+- (id) initWithArray:(NSMutableArray*)a;
+
 - (NSMutableArray*)shuffle:(NSMutableArray*)s;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "Cards.h"
 #import "Card.h"
+#import "Shuffle.h"
 
 @implementation Cards
 
@@ -45,6 +46,11 @@
         
         [cards addObject:card];
     }
+}
+
+- (void)shuffle
+{
+    Shuffle* shuffle = [Shuffle alloc]
 }
 
 @end
