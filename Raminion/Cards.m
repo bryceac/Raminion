@@ -46,8 +46,6 @@
         
         [cards addObject:card];
     }
-    
-    NSLog(@"%@", cards);
 }
 
 - (void)shuffle
