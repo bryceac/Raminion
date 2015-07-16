@@ -16,4 +16,21 @@
     // Do view setup here.
 }
 
+- (IBAction)shuffle:(id)sender
+{
+    
+}
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
+{
+    return 10;
+}
+
+- (NSView*)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+{
+    if ([tableColumn.identifier isEqualToString:@"card"]) {
+        <#statements#>
+    }
+}
+
 @end
