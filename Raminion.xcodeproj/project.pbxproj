@@ -15,6 +15,7 @@
 		6C87D0AF1B572F99008C0260 /* dominion.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C87D0AE1B572F99008C0260 /* dominion.json */; };
 		6C87D0B31B573000008C0260 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C87D0B11B573000008C0260 /* MasterViewController.m */; };
 		6C87D0B41B573000008C0260 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C87D0B21B573000008C0260 /* MasterViewController.xib */; };
+		6CC8E9A21B57FE47004E0A20 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC8E9A11B57FE47004E0A20 /* Card.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 		6C87D0B01B573000008C0260 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		6C87D0B11B573000008C0260 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		6C87D0B21B573000008C0260 /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
+		6CC8E9A01B57FE47004E0A20 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		6CC8E9A11B57FE47004E0A20 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				6C87D0B01B573000008C0260 /* MasterViewController.h */,
 				6C87D0B11B573000008C0260 /* MasterViewController.m */,
 				6C87D0B21B573000008C0260 /* MasterViewController.xib */,
+				6CC8E9A01B57FE47004E0A20 /* Card.h */,
+				6CC8E9A11B57FE47004E0A20 /* Card.m */,
 			);
 			path = Raminion;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 				6C87D0941B572F60008C0260 /* main.m in Sources */,
 				6C87D0B31B573000008C0260 /* MasterViewController.m in Sources */,
 				6C87D0921B572F60008C0260 /* AppDelegate.m in Sources */,
+				6CC8E9A21B57FE47004E0A20 /* Card.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +421,7 @@
 				6C87D0AA1B572F60008C0260 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6C87D0AB1B572F60008C0260 /* Build configuration list for PBXNativeTarget "RaminionTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +430,7 @@
 				6C87D0AD1B572F60008C0260 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
