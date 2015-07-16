@@ -20,18 +20,16 @@ Cards* cards;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
-    NSLog(@"\r\n%@", [json json]);
-    NSLog(@"Cards: %d", cards.cards.count);
     
 }
 
 - (IBAction)shuffle:(id)sender
 {
     
-    for (int i = 0; i < cards.cards.count; i++)
+    /* for (int i = 0; i < cards.cards.count; i++)
     {
         NSLog(@"Card: %@ Set: %@, Cost: %d", [[cards cards][i] name], [[cards cards][i] collection], [[cards cards][i] cost]);
-    }
+    } */
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
