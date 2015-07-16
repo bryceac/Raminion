@@ -7,6 +7,8 @@
 //
 
 #import "MasterViewController.h"
+#import "Cards.h"
+#import "JSON.h"
 
 @implementation MasterViewController
 @synthesize table;
@@ -28,9 +30,8 @@
 
 - (NSView*)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    if ([tableColumn.identifier isEqualToString:@"card"]) {
-        <#statements#>
-    }
+    Cards* cards = [Cards alloc] init
+    NSTableCellView* cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
 }
 
 @end
