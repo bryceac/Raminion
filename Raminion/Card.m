@@ -10,11 +10,13 @@
 
 @implementation Card
 
+// default initializer that is used to create empty object
 - (id) init
 {
     return [self initWithName:nil collection:nil cost:0 potion:false kind:nil];
 }
 
+// method to create object with data to prepopulate it
 - (id) initWithName:(NSString*)n collection:(NSString*)c cost:(int)f potion:(BOOL)b kind:(NSArray*)k
 {
     if (self = [super init]) {
