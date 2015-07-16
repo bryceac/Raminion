@@ -21,6 +21,7 @@
 {
     if (self = [super init])
     {
+        cards = [[NSMutableArray alloc] init];
         [self createCards:s];
     }
     return self;
@@ -45,6 +46,8 @@
         
         [cards addObject:card];
     }
+    
+    NSLog(@"%@", cards);
 }
 
 - (void)shuffle

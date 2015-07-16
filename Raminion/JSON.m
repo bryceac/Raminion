@@ -19,6 +19,8 @@
 {
     if (self = [super init])
     {
+        json = [[NSDictionary alloc] init];
+        supply = [[NSArray alloc] init];
         [self createJSON:f];
     }
     return self;
