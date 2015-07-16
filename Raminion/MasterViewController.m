@@ -20,6 +20,7 @@ Cards* cards;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
+    NSLog(@"\r\n%@", [json json]);
     NSLog(@"Cards: %d", cards.cards.count);
     
 }
