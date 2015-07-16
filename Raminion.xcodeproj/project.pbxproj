@@ -13,6 +13,8 @@
 		6C87D0991B572F60008C0260 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C87D0971B572F60008C0260 /* MainMenu.xib */; };
 		6C87D0A51B572F60008C0260 /* RaminionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C87D0A41B572F60008C0260 /* RaminionTests.m */; };
 		6C87D0AF1B572F99008C0260 /* dominion.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C87D0AE1B572F99008C0260 /* dominion.json */; };
+		6C87D0B31B573000008C0260 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C87D0B11B573000008C0260 /* MasterViewController.m */; };
+		6C87D0B41B573000008C0260 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C87D0B21B573000008C0260 /* MasterViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,9 @@
 		6C87D0A31B572F60008C0260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C87D0A41B572F60008C0260 /* RaminionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RaminionTests.m; sourceTree = "<group>"; };
 		6C87D0AE1B572F99008C0260 /* dominion.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dominion.json; sourceTree = "<group>"; };
+		6C87D0B01B573000008C0260 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		6C87D0B11B573000008C0260 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		6C87D0B21B573000008C0260 /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +88,9 @@
 				6C87D0951B572F60008C0260 /* Images.xcassets */,
 				6C87D0971B572F60008C0260 /* MainMenu.xib */,
 				6C87D08E1B572F60008C0260 /* Supporting Files */,
+				6C87D0B01B573000008C0260 /* MasterViewController.h */,
+				6C87D0B11B573000008C0260 /* MasterViewController.m */,
+				6C87D0B21B573000008C0260 /* MasterViewController.xib */,
 			);
 			path = Raminion;
 			sourceTree = "<group>";
@@ -194,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C87D0B41B573000008C0260 /* MasterViewController.xib in Resources */,
 				6C87D0961B572F60008C0260 /* Images.xcassets in Resources */,
 				6C87D0AF1B572F99008C0260 /* dominion.json in Resources */,
 				6C87D0991B572F60008C0260 /* MainMenu.xib in Resources */,
@@ -215,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C87D0941B572F60008C0260 /* main.m in Sources */,
+				6C87D0B31B573000008C0260 /* MasterViewController.m in Sources */,
 				6C87D0921B572F60008C0260 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
