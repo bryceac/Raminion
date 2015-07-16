@@ -24,11 +24,13 @@ Cards* cards;
 
 - (IBAction)shuffle:(id)sender
 {
+    json = [[JSON alloc] initWithFile:@"dominion"];
+    cards = [[Cards alloc] initWithSupply:[json supply]];
     
-    /* for (int i = 0; i < cards.cards.count; i++)
-    {
-        NSLog(@"Card: %@ Set: %@, Cost: %d", [[cards cards][i] name], [[cards cards][i] collection], [[cards cards][i] cost]);
-    } */
+    [cards shuffle];
+    
+    table.delegate = self;
+    table.dataSource = self;
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
@@ -38,8 +40,6 @@ Cards* cards;
 
 - (NSView*)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    json = [[JSON alloc] initWithFile:@"dominion"];
-    cards = [[Cards alloc] initWithSupply:[json supply]];
     Card* card = [cards cards][row];
     
     NSTableCellView* cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
