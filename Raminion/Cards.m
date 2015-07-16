@@ -17,7 +17,7 @@
     return [self initWithSupply:nil];
 }
 
-- (id) initWithSupply:(NSDictionary*)s
+- (id) initWithSupply:(NSArray*)s
 {
     if (self = [super init])
     {
@@ -26,15 +26,16 @@
     return self;
 }
 
-- (void)createCards:(NSDictionary *)s
+- (void)createCards:(NSArray *)s
 {
-    NSArray* supply = [s objectForKey:@"cards"];
     Card* card;
     
-    for (int i = 0; i < [supply count]; i++)
+    for (int i = 0; i < [s count]; i++)
     {
-        NSDictionary* item = [supply objectAtIndex:i];
+        NSDictionary* item = [s objectAtIndex:i];
         NSArray* types = [item objectForKey:@"types"];
+        
+        NSLog(@"%@", types);
         
         if ([types containsObject:@"potion"]) {
             card = [[Card alloc] initWithName:[item objectForKey:@"name"] collection:[item objectForKey:@"set"] cost:[[item objectForKey:@"cost"] intValue] potion:true kind:types];

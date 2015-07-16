@@ -13,9 +13,9 @@
     NSMutableArray* cards;
 }
 
-- (id) initWithSupply:(NSDictionary*)s;
+- (id) initWithSupply:(NSArray*)s;
 
-- (void)createCards:(NSDictionary*)s;
+- (void)createCards:(NSArray*)s;
 
 - (void)shuffle;
 

@@ -40,7 +40,7 @@ Cards* cards;
 - (NSView*)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
     json = [[JSON alloc] initWithFile:@"dominion"];
-    cards = [[Cards alloc] initWithSupply:[json json]];
+    cards = [[Cards alloc] initWithSupply:[json supply]];
     
     NSTableCellView* cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
     
