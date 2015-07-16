@@ -50,7 +50,7 @@
 
 - (void)shuffle
 {
-    Shuffle* shuffle = [Shuffle alloc]
+    Shuffle* shuffle = [[Shuffle alloc] init];
 }
 
 @end

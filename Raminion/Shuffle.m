@@ -10,6 +10,11 @@
 
 @implementation Shuffle
 
+- (id) init
+{
+    return [self initWithArray:nil];
+}
+
 - (id) initWithArray:(NSMutableArray*)a
 {
     if (self = [super init])
