@@ -44,7 +44,7 @@ Cards* cards;
     
     NSTableCellView* cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
     
-    /* if ([tableColumn.identifier isEqualToString:@"card"])
+    if ([tableColumn.identifier isEqualToString:@"card"])
     {
         [cell.textField setStringValue:[card name]];
     }
@@ -55,7 +55,7 @@ Cards* cards;
     else
     {
             [cell.textField setStringValue:[NSString stringWithFormat:@"%d", [card cost]]];
-    } */
+    }
     
     return cell;
 }
