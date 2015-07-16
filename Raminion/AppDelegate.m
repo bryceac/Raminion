@@ -20,6 +20,8 @@
     // Insert code here to initialize your application
     
     MasterViewController* masterView = [[MasterViewController alloc] initWithNibName:@"MasterViewController" bundle:nil];
+    
+    [self.window.contentView addSubview:masterView.view];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
