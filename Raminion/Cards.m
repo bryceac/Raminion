@@ -35,8 +35,6 @@
         NSDictionary* item = [s objectAtIndex:i];
         NSArray* types = [item objectForKey:@"types"];
         
-        NSLog(@"%@", types);
-        
         if ([types containsObject:@"potion"]) {
             card = [[Card alloc] initWithName:[item objectForKey:@"name"] collection:[item objectForKey:@"set"] cost:[[item objectForKey:@"cost"] intValue] potion:true kind:types];
         }
