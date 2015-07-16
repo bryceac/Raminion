@@ -8,21 +8,25 @@
 
 #import "MasterViewController.h"
 #import "Cards.h"
+#import "Card.h"
 #import "JSON.h"
 
 @implementation MasterViewController
 @synthesize table;
 
-JSON json = [JSON alloc]
+JSON *json;
+Cards* cards;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
+    
 }
 
 - (IBAction)shuffle:(id)sender
 {
-    
+    json = [[JSON alloc] initWithFile:@"dominion"];
+    cards = [[Cards alloc] initWithSupply:[json json]];
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
@@ -32,8 +36,22 @@ JSON json = [JSON alloc]
 
 - (NSView*)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    Cards* cards = [Cards alloc] initWithSupply:];
     NSTableCellView* cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
+    
+    if ([tableColumn.identifier isEqualToString:@"card"])
+    {
+        cell.textField.stringValue = [[cards cards][row] name];
+    }
+    else if ([tableColumn.identifier isEqualToString:@"set"])
+    {
+        cell.textField.stringValue = [[cards cards][row] collection];
+    }
+    else
+    {
+        cell.textField.stringValue = [NSString stringWithFormat:@"%d", [[cards cards][row] cost]];
+    }
+    
+    return cell;
 }
 
 @end
