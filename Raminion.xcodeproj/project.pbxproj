@@ -18,6 +18,7 @@
 		6CC8E9A21B57FE47004E0A20 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC8E9A11B57FE47004E0A20 /* Card.m */; };
 		6CC8E9A51B58073D004E0A20 /* JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC8E9A41B58073D004E0A20 /* JSON.m */; };
 		6CC8E9A81B581135004E0A20 /* Cards.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC8E9A71B581135004E0A20 /* Cards.m */; };
+		6CC8E9AB1B5812AF004E0A20 /* Shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC8E9AA1B5812AF004E0A20 /* Shuffle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		6CC8E9A41B58073D004E0A20 /* JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSON.m; sourceTree = "<group>"; };
 		6CC8E9A61B581135004E0A20 /* Cards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cards.h; sourceTree = "<group>"; };
 		6CC8E9A71B581135004E0A20 /* Cards.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cards.m; sourceTree = "<group>"; };
+		6CC8E9A91B5812AF004E0A20 /* Shuffle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shuffle.h; sourceTree = "<group>"; };
+		6CC8E9AA1B5812AF004E0A20 /* Shuffle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shuffle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,8 @@
 				6CC8E9A41B58073D004E0A20 /* JSON.m */,
 				6CC8E9A61B581135004E0A20 /* Cards.h */,
 				6CC8E9A71B581135004E0A20 /* Cards.m */,
+				6CC8E9A91B5812AF004E0A20 /* Shuffle.h */,
+				6CC8E9AA1B5812AF004E0A20 /* Shuffle.m */,
 			);
 			path = Raminion;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CC8E9AB1B5812AF004E0A20 /* Shuffle.m in Sources */,
 				6CC8E9A51B58073D004E0A20 /* JSON.m in Sources */,
 				6C87D0941B572F60008C0260 /* main.m in Sources */,
 				6C87D0B31B573000008C0260 /* MasterViewController.m in Sources */,
