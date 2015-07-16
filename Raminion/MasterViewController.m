@@ -20,16 +20,17 @@ Cards* cards;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
+    NSLog(@"Cards: %d", cards.cards.count);
     
 }
 
 - (IBAction)shuffle:(id)sender
 {
-    json = [[JSON alloc] initWithFile:@"dominion"];
-    cards = [[Cards alloc] initWithSupply:[json json]];
     
-    table.delegate = self;
-    table.dataSource = self;
+    for (int i = 0; i < cards.cards.count; i++)
+    {
+        NSLog(@"Card: %@ Set: %@, Cost: %d", [[cards cards][i] name], [[cards cards][i] collection], [[cards cards][i] cost]);
+    }
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
@@ -39,19 +40,38 @@ Cards* cards;
 
 - (NSView*)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
+    json = [[JSON alloc] initWithFile:@"dominion"];
+    cards = [[Cards alloc] initWithSupply:[json json]];
+    
     NSTableCellView* cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
     
     if ([tableColumn.identifier isEqualToString:@"card"])
     {
-        cell.textField.stringValue = [[cards cards][row] name];
+        if ([[cards cards][row] name] != nil) {
+            [cell.textField setStringValue:[[cards cards][row] name]];
+        }
+        else
+        {
+            NSLog(@"card has no name");
+        }
     }
     else if ([tableColumn.identifier isEqualToString:@"set"])
     {
-        cell.textField.stringValue = [[cards cards][row] collection];
+        if ([[cards cards][row] collection] != nil) {
+            [cell.textField setStringValue:[[cards cards][row] name]];
+        }
+        else
+        {
+            NSLog(@"card has no set");
+        }
     }
     else
     {
-        cell.textField.stringValue = [NSString stringWithFormat:@"%d", [[cards cards][row] cost]];
+        if ([[cards cards][row] cost] != nil) {
+            [cell.textField setStringValue:[NSString stringWithFormat:@"%d", [[cards cards][row] cost]]];
+        }
+        
+        NSLog(@"card has no cost");
     }
     
     return cell;
