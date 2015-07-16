@@ -11,6 +11,7 @@
 @interface JSON : NSObject
 {
     NSDictionary* json;
+    NSArray* supply;
 }
 
 - (id) initWithFile:(NSString*)f;
@@ -18,5 +19,9 @@
 - (void)createJSON:(NSString*)f;
 
 - (NSDictionary*)json;
+
+- (void) createSupply:(NSDictionary*)j;
+
+- (NSArray*)supply;
 
 @end

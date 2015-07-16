@@ -31,11 +31,23 @@
     NSString* content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     
     json = [NSJSONSerialization JSONObjectWithData:[content dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
+    
+    [self createSupply:json];
 }
 
 - (NSDictionary*)json
 {
     return json;
+}
+
+- (void)createSupply:(NSDictionary *)j
+{
+    supply = [j objectForKey:@"cards"];
+}
+
+- (NSArray*)supply
+{
+    return supply;
 }
 
 @end
