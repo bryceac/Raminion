@@ -10,4 +10,28 @@
 
 @implementation JSON
 
+- (id) init
+{
+    return [self initWithFile:nil];
+}
+
+- (id) initWithFile:(NSString*)f
+{
+    if (self = [super init])
+    {
+        [self createJSON:f];
+    }
+    return self;
+}
+
+- (void)createJSON:(NSString *)f
+{
+    
+}
+
+- (NSMutableArray*)json
+{
+    return json;
+}
+
 @end

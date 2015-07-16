@@ -15,6 +15,6 @@
 
 - (void)createJSON:(NSString*)f;
 
-- (NSMutableArray*)getJSON;
+- (NSMutableArray*)json;
 
 @end
