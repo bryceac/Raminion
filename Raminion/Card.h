@@ -16,6 +16,9 @@
     BOOL potion;
 }
 
+// custom initializer method
+- (id) initWithName:(NSString*)n collection:(NSString*)c cost:(int)f potion:(BOOL)b kind:(NSArray*)k;
+
 // setter methods
 - (void)setName:(NSString*)n;
 - (void)setCollection:(NSString*)s;
