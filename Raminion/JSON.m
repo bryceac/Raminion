@@ -28,9 +28,9 @@
 {
     NSString* path = [[NSBundle mainBundle] pathForResource:f ofType:@"json"];
     
-    NSData* data = [NSData dataWithContentsOfFile:path];
+    NSString* content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     
-    json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    json = [NSJSONSerialization JSONObjectWithData:[content dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
 }
 
 - (NSDictionary*)json
