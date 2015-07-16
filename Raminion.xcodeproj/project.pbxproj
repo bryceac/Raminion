@@ -12,6 +12,7 @@
 		6C87D0961B572F60008C0260 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C87D0951B572F60008C0260 /* Images.xcassets */; };
 		6C87D0991B572F60008C0260 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C87D0971B572F60008C0260 /* MainMenu.xib */; };
 		6C87D0A51B572F60008C0260 /* RaminionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C87D0A41B572F60008C0260 /* RaminionTests.m */; };
+		6C87D0AF1B572F99008C0260 /* dominion.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C87D0AE1B572F99008C0260 /* dominion.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		6C87D09E1B572F60008C0260 /* RaminionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaminionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C87D0A31B572F60008C0260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C87D0A41B572F60008C0260 /* RaminionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RaminionTests.m; sourceTree = "<group>"; };
+		6C87D0AE1B572F99008C0260 /* dominion.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dominion.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		6C87D08E1B572F60008C0260 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6C87D0AE1B572F99008C0260 /* dominion.json */,
 				6C87D08F1B572F60008C0260 /* Info.plist */,
 				6C87D0931B572F60008C0260 /* main.m */,
 			);
@@ -192,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C87D0961B572F60008C0260 /* Images.xcassets in Resources */,
+				6C87D0AF1B572F99008C0260 /* dominion.json in Resources */,
 				6C87D0991B572F60008C0260 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
