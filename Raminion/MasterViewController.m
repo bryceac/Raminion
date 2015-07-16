@@ -27,6 +27,9 @@ Cards* cards;
 {
     json = [[JSON alloc] initWithFile:@"dominion"];
     cards = [[Cards alloc] initWithSupply:[json json]];
+    
+    table.delegate = self;
+    table.dataSource = self;
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
