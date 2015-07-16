@@ -20,7 +20,6 @@ Cards* cards;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
-    
 }
 
 - (IBAction)shuffle:(id)sender
@@ -41,37 +40,22 @@ Cards* cards;
 {
     json = [[JSON alloc] initWithFile:@"dominion"];
     cards = [[Cards alloc] initWithSupply:[json supply]];
+    Card* card = [cards cards][row];
     
     NSTableCellView* cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
     
-    if ([tableColumn.identifier isEqualToString:@"card"])
+    /* if ([tableColumn.identifier isEqualToString:@"card"])
     {
-        if ([[cards cards][row] name] != nil) {
-            [cell.textField setStringValue:[[cards cards][row] name]];
-        }
-        else
-        {
-            NSLog(@"card has no name");
-        }
+        [cell.textField setStringValue:[card name]];
     }
     else if ([tableColumn.identifier isEqualToString:@"set"])
     {
-        if ([[cards cards][row] collection] != nil) {
-            [cell.textField setStringValue:[[cards cards][row] name]];
-        }
-        else
-        {
-            NSLog(@"card has no set");
-        }
+            [cell.textField setStringValue:[card collection]];
     }
     else
     {
-        if ([[cards cards][row] cost] != nil) {
-            [cell.textField setStringValue:[NSString stringWithFormat:@"%d", [[cards cards][row] cost]]];
-        }
-        
-        NSLog(@"card has no cost");
-    }
+            [cell.textField setStringValue:[NSString stringWithFormat:@"%d", [card cost]]];
+    } */
     
     return cell;
 }
