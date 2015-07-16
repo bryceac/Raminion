@@ -13,6 +13,8 @@
 @implementation MasterViewController
 @synthesize table;
 
+JSON json = [JSON alloc]
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
@@ -30,7 +32,7 @@
 
 - (NSView*)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    Cards* cards = [Cards alloc] init
+    Cards* cards = [Cards alloc] initWithSupply:];
     NSTableCellView* cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
 }
 

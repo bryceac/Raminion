@@ -13,6 +13,8 @@
     NSDictionary* json;
 }
 
+- (id) initWithFile:(NSString*)f;
+
 - (void)createJSON:(NSString*)f;
 
 - (NSDictionary*)json;
