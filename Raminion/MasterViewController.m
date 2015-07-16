@@ -8,11 +8,8 @@
 
 #import "MasterViewController.h"
 
-@interface MasterViewController ()
-
-@end
-
 @implementation MasterViewController
+@synthesize table;
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -8,6 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface MasterViewController : NSViewController
+@interface MasterViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource>
+{
+    IBOutlet NSTableView* table;
+}
+
+@property (retain) NSTableView* table;
+
+- (IBAction)shuffle:(id)sender;
 
 @end
