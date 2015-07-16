@@ -148,12 +148,15 @@
                     </tableHeaderView>
                 </scrollView>
                 <button verticalHuggingPriority="750" id="LfY-U8-g5u">
-                    <rect key="frame" x="20" y="4" width="82" height="32"/>
+                    <rect key="frame" x="20" y="4" width="83" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Gn2-Bf-gIJ">
+                    <buttonCell key="cell" type="push" title="Shuffle" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Gn2-Bf-gIJ">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="shuffle:" target="-2" id="egV-7g-bNh"/>
+                    </connections>
                 </button>
                 <textField verticalHuggingPriority="750" id="SNQ-n9-vHc">
                     <rect key="frame" x="7" y="50" width="96" height="22"/>
