@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MasterViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,8 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+    
+    MasterViewController* masterv = [[[MasterViewController alloc] initWithNibName:@"MasterViewController" bundle:nil];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
