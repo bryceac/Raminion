@@ -64,13 +64,20 @@
         }
     }
     
-    for (int j = 0; j < [c count]; j++)
+    if (yw)
     {
-        if ([c[j] isKindOfClass:[Card class]] && [c[j] cost] > 1 && [c[j] cost] <= 3 && [c[j] potion] != true)
+        for (int j = 0; j < [c count]; j++)
         {
-            bane = c[j];
-            j = [c count];
+            if ([c[j] isKindOfClass:[Card class]] && [c[j] cost] > 1 && [c[j] cost] <= 3 && [c[j] potion] != true)
+            {
+                bane = c[j];
+                j = [c count];
+            }
         }
+    }
+    else
+    {
+        bane = nil;
     }
     
     return bane;
