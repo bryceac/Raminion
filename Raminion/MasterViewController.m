@@ -18,7 +18,7 @@
 JSON *json;
 Cards* cards;
 Rules* rules;
-Card* bane;
+Card *bane, *potion, *platinum, *colony;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,9 +43,76 @@ Card* bane;
 {
     bane = [rules bane:[cards cards]];
     
-    if (bane != nil)
+    for (int i = 0; i < [[cards cards] count]; i++) {
+        if ([[[cards cards][i] name] isEqualTo:@"Potion"]) {
+            potion = [cards cards][i];
+        }
+        if ([[[cards cards][i] name] isEqualTo:@"Colony"]) {
+            potion = [cards cards][i];
+        }
+        if ([[[cards cards][i] name] isEqualTo:@"Platinum"]) {
+            potion = [cards cards][i];
+        }
+    }
+    
+    if (bane != nil && [rules colony:[cards cards]] == true && [rules potion:[cards cards]] == true)
+    {
+        int index = [[cards cards] indexOfObject:potion];
+        [[cards cards] exchangeObjectAtIndex:index withObjectAtIndex:10];
+        
+        index = [[cards cards] indexOfObject:colony];
+        [[cards cards] exchangeObjectAtIndex:index withObjectAtIndex:11];
+        index = [[cards cards] indexOfObject:platinum];
+        [[cards cards] exchangeObjectAtIndex:index withObjectAtIndex:12];
+        index = [[cards cards] indexOfObject:bane];
+        [[cards cards] exchangeObjectAtIndex:index withObjectAtIndex:13];
+        return 14;
+    }
+    if (bane != nil && [rules colony:[cards cards]] == true && [rules potion:[cards cards]] == false)
+    {
+        int index = [[cards cards] indexOfObject:colony];
+        [[cards cards] exchangeObjectAtIndex:index withObjectAtIndex:10];
+        index = [[cards cards] indexOfObject:platinum];
+        [[cards cards] exchangeObjectAtIndex:index withObjectAtIndex:11];
+        index = [[cards cards] indexOfObject:bane];
+        [[cards cards] exchangeObjectAtIndex:index withObjectAtIndex:12];
+        return 13;
+    }
+    if (bane != nil && [rules colony:[cards cards]] == false && [rules potion:[cards cards]] == true)
+    {
+        int index = [[cards cards] indexOfObject:potion];
+        [[cards cards] exchangeObjectAtIndex:index withObjectAtIndex:10];
+        index = [[cards cards] indexOfObject:bane];
+        [[cards cards] exchangeObjectAtIndex:index withObjectAtIndex:11];
+        return 12;
+    }
+    if (bane == nil && [rules colony:[cards cards]] == true && [rules potion:[cards cards]] == false)
+    {
+        int index = [[cards cards] indexOfObject:potion];
+        [[cards cards] exchangeObjectAtIndex:index withObjectAtIndex:10];
+        index = [[cards cards] indexOfObject:colony];
+        [[cards cards] exchangeObjectAtIndex:index withObjectAtIndex:11];
+        index = [[cards cards] indexOfObject:platinum];
+        [[cards cards] exchangeObjectAtIndex:index withObjectAtIndex:12];
+        return 13;
+    }
+    if (bane != nil && [rules colony:[cards cards]] == false && [rules potion:[cards cards]] == false)
     {
         int index = [[cards cards] indexOfObject:bane];
+        [[cards cards] exchangeObjectAtIndex:index withObjectAtIndex:10];
+        return 11;
+    }
+    if (bane == nil && [rules colony:[cards cards]] == true && [rules potion:[cards cards]] == false)
+    {
+        int index = [[cards cards] indexOfObject:colony];
+        [[cards cards] exchangeObjectAtIndex:index withObjectAtIndex:10];
+        index = [[cards cards] indexOfObject:platinum];
+        [[cards cards] exchangeObjectAtIndex:index withObjectAtIndex:11];
+        return 12;
+    }
+    if (bane == nil && [rules colony:[cards cards]] == false && [rules potion:[cards cards]] == true)
+    {
+        int index = [[cards cards] indexOfObject:potion];
         [[cards cards] exchangeObjectAtIndex:index withObjectAtIndex:10];
         return 11;
     }
