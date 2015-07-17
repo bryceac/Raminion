@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C5368041B5968970051DA8A /* Rules.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5368031B5968970051DA8A /* Rules.m */; };
 		6C87D0921B572F60008C0260 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C87D0911B572F60008C0260 /* AppDelegate.m */; };
 		6C87D0941B572F60008C0260 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C87D0931B572F60008C0260 /* main.m */; };
 		6C87D0961B572F60008C0260 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C87D0951B572F60008C0260 /* Images.xcassets */; };
@@ -32,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C5368021B5968970051DA8A /* Rules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rules.h; sourceTree = "<group>"; };
+		6C5368031B5968970051DA8A /* Rules.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rules.m; sourceTree = "<group>"; };
 		6C87D08B1B572F60008C0260 /* Raminion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Raminion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C87D08F1B572F60008C0260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C87D0901B572F60008C0260 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -111,6 +114,8 @@
 				6CC8E9A71B581135004E0A20 /* Cards.m */,
 				6CC8E9A91B5812AF004E0A20 /* Shuffle.h */,
 				6CC8E9AA1B5812AF004E0A20 /* Shuffle.m */,
+				6C5368021B5968970051DA8A /* Rules.h */,
+				6C5368031B5968970051DA8A /* Rules.m */,
 			);
 			path = Raminion;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 				6C87D0941B572F60008C0260 /* main.m in Sources */,
 				6C87D0B31B573000008C0260 /* MasterViewController.m in Sources */,
 				6CC8E9A81B581135004E0A20 /* Cards.m in Sources */,
+				6C5368041B5968970051DA8A /* Rules.m in Sources */,
 				6C87D0921B572F60008C0260 /* AppDelegate.m in Sources */,
 				6CC8E9A21B57FE47004E0A20 /* Card.m in Sources */,
 			);

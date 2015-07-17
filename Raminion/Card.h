@@ -11,26 +11,26 @@
 @interface Card : NSObject
 {
     NSString *name, *collection;
-    NSArray* kind;
+    NSArray* types;
     int cost;
     BOOL potion;
 }
 
 // custom initializer method
-- (id) initWithName:(NSString*)n collection:(NSString*)c cost:(int)f potion:(BOOL)b kind:(NSArray*)k;
+- (id) initWithName:(NSString*)n collection:(NSString*)c cost:(int)f potion:(BOOL)b types:(NSArray*)k;
 
 // setter methods
 - (void)setName:(NSString*)n;
 - (void)setCollection:(NSString*)s;
 - (void)setPotion:(BOOL)b;
-- (void)setKind:(NSArray*)k;
+- (void)setTypes:(NSArray*)k;
 - (void)setCost:(int)c;
 
 // accessor methods
 - (NSString*)name;
 - (NSString*)collection;
 - (BOOL)potion;
-- (NSArray*)kind;
+- (NSArray*)types;
 - (int)cost;
 
 @end
