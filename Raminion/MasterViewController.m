@@ -31,6 +31,8 @@ Cards* cards;
     
     table.delegate = self;
     table.dataSource = self;
+    
+    [table reloadData];
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView

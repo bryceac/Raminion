@@ -15,13 +15,14 @@
 @end
 
 @implementation AppDelegate
+@synthesize masterView;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
     
-    MasterViewController* masterView = [[MasterViewController alloc] initWithNibName:@"MasterViewController" bundle:nil];
+    self.masterView = [[MasterViewController alloc] initWithNibName:@"MasterViewController" bundle:nil];
     
-    [self.window.contentView addSubview:masterView.view];
+    [self.window.contentView addSubview:self.masterView.view];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
