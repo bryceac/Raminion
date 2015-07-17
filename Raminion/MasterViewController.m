@@ -43,17 +43,9 @@ Card *bane, *potion, *platinum, *colony;
 {
     bane = [rules bane:[cards cards]];
     
-    for (int i = 0; i < [[cards cards] count]; i++) {
-        if ([[[cards cards][i] name] isEqualTo:@"Potion"]) {
-            potion = [cards cards][i];
-        }
-        if ([[[cards cards][i] name] isEqualTo:@"Colony"]) {
-            potion = [cards cards][i];
-        }
-        if ([[[cards cards][i] name] isEqualTo:@"Platinum"]) {
-            potion = [cards cards][i];
-        }
-    }
+    potion = [cards cards][[[cards cards] count]-3];
+    platinum = [cards cards][[[cards cards] count]-2];
+    colony = [cards cards][[[cards cards] count]-1];
     
     if (bane != nil && [rules colony:[cards cards]] == true && [rules potion:[cards cards]] == true)
     {
