@@ -10,12 +10,15 @@
 #import "Cards.h"
 #import "Card.h"
 #import "JSON.h"
+#import "Rules.h"
 
 @implementation MasterViewController
 @synthesize table;
 
 JSON *json;
 Cards* cards;
+Rules* rules;
+Card* bane;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,6 +29,7 @@ Cards* cards;
 {
     json = [[JSON alloc] initWithFile:@"dominion"];
     cards = [[Cards alloc] initWithSupply:[json supply]];
+    rules = [[Rules alloc] init];
     
     [cards shuffle];
     
@@ -37,6 +41,14 @@ Cards* cards;
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
+    bane = [rules bane:[cards cards]];
+    
+    if (bane != nil)
+    {
+        int index = [[cards cards] indexOfObject:bane];
+        [[cards cards] exchangeObjectAtIndex:index withObjectAtIndex:10];
+        return 11;
+    }
     return 10;
 }
 

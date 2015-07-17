@@ -80,6 +80,8 @@
         bane = nil;
     }
     
+    [bane setName:[NSString stringWithFormat:@"%@ (Bane)", [bane name]]];
+    
     return bane;
 }
 @end
