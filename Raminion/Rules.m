@@ -68,9 +68,10 @@
     {
         for (int j = 0; j < [c count]; j++)
         {
-            if ([c[j] isKindOfClass:[Card class]] && [c[j] cost] > 1 && [c[j] cost] <= 3 && [c[j] potion] != true)
+            int randValue = arc4random_uniform((uint32_t)[c count]);
+            if ([c[randValue] isKindOfClass:[Card class]] && [c[j] cost] > 1 && [c[j] cost] <= 3 && [c[j] potion] != true && randValue > 9)
             {
-                bane = c[j];
+                bane = c[randValue];
                 j = [c count];
             }
         }
