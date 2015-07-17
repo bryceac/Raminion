@@ -28,11 +28,9 @@
 {
     for (int i = 0; i < [s count]; i++)
     {
-        int randValue = (arc4random() % [s count] -1);
-        id temp = s[i];
+        int randValue = arc4random_uniform((uint32_t)[s count]);
         
-        s[i] = s[randValue];
-        s[randValue] = temp;
+        [s exchangeObjectAtIndex:i withObjectAtIndex:randValue];
     }
     return s;
 }
