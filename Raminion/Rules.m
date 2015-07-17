@@ -42,7 +42,7 @@
     int potion = 0;
     
     for (int i = 0; i < 10; i++) {
-        if ([c[i] isKindOfClass:[Card class]] && [[c[i] kind] containsObject:@"potion"]) {
+        if ([c[i] isKindOfClass:[Card class]] && [[c[i] types] containsObject:@"potion"]) {
             potion++;
         }
     }
