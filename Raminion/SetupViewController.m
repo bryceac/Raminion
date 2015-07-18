@@ -24,37 +24,59 @@ NSMutableArray* supply;
 
 - (void)required:(BOOL)c potion:(BOOL)p
 {
-    supply = [[NSMutableArray alloc] init];
+    // make sure array is empty before performing action
+    if ([supply count] == 0 || supply == nil)
+    {
+        supply = [[NSMutableArray alloc] init];
+    }
+    else
+    {
+        [supply removeAllObjects];
+    }
+    
     if (c && p)
      {
-     NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
-     [item setObject:[NSNumber numberWithInt:1] forKey:@"Potion"];
-     [supply addObject:item];
-     [item removeObjectForKey:@"Potion"];
-     [item setObject:[NSNumber numberWithInt:1] forKey:@"Colony & Platinum"];
-     [supply addObject:item];
-     
+         NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
+         [item setObject:[NSNumber numberWithInt:1] forKey:@"Potion"];
+         [supply addObject:item];
+         [item removeObjectForKey:@"Potion"];
+         [item setObject:[NSNumber numberWithInt:1] forKey:@"Colony & Platinum"];
+         [supply addObject:item];
      }
-     if (c)
+    
+     else if (c)
      {
-     NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
-     [item setObject:[NSNumber numberWithInt:0] forKey:@"Potion"];
-     [supply addObject:item];
-     [item removeObjectForKey:@"Potion"];
-     [item setObject:[NSNumber numberWithInt:1] forKey:@"Colony & Platinum"];
-     [supply addObject:item];
-     
+         NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
+         [item setObject:[NSNumber numberWithInt:0] forKey:@"Potion"];
+         [supply addObject:item];
+         [item removeObjectForKey:@"Potion"];
+         [item setObject:[NSNumber numberWithInt:1] forKey:@"Colony & Platinum"];
+         [supply addObject:item];
      }
-     if (p)
+    
+     else if (p)
      {
-     NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
-     [item setObject:[NSNumber numberWithInt:1] forKey:@"Potion"];
-     [supply addObject:item];
-     [item removeObjectForKey:@"Potion"];
-     [item setObject:[NSNumber numberWithInt:0] forKey:@"Colony & Platinum"];
-     [supply addObject:item];
-     
+         NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
+         [item setObject:[NSNumber numberWithInt:1] forKey:@"Potion"];
+         [supply addObject:item];
+         [item removeObjectForKey:@"Potion"];
+         [item setObject:[NSNumber numberWithInt:0] forKey:@"Colony & Platinum"];
+         [supply addObject:item];
      }
+    else
+    {
+        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
+        [item setObject:[NSNumber numberWithInt:0] forKey:@"Potion"];
+        [supply addObject:item];
+        [item removeObjectForKey:@"Potion"];
+        [item setObject:[NSNumber numberWithInt:0] forKey:@"Colony & Platinum"];
+        [supply addObject:item];
+    }
+    
+    setup.delegate = self;
+    setup.dataSource = self;
+    
+    [setup reloadData];
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
@@ -78,7 +100,13 @@ NSMutableArray* supply;
     }
     else
     {
-        [cell.textField setStringValue:[current valueForKey:key]];
+        if ([[current valueForKey:key] integerValue] > 0) {
+            [cell.textField setStringValue:@"Yes"];
+        }
+        else
+        {
+            [cell.textField setStringValue:@"No"];
+        }
     }
     
     return cell;
