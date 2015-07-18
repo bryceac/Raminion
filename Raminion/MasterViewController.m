@@ -43,7 +43,7 @@ Card *bane, *potion, *platinum, *colony;
 {
     bane = [rules bane:[cards cards]];
     
-    if (bane != nil && [rules colony:[cards cards]] == false && [rules potion:[cards cards]] == false)
+    if (bane != nil)
     {
         int index = [[cards cards] indexOfObject:bane];
         [[cards cards] exchangeObjectAtIndex:index withObjectAtIndex:10];
