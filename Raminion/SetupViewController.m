@@ -24,17 +24,9 @@ NSMutableArray* supply;
 
 - (void)required:(BOOL)c potion:(BOOL)p
 {
-    // make sure array is empty before performing action
-    if ([supply count] == 0 || supply == nil)
-    {
-        supply = [[NSMutableArray alloc] init];
-    }
-    else
-    {
-        [supply removeAllObjects];
-    }
+    supply = [[NSMutableArray alloc] init];
     
-    if (c && p)
+    if (c == true && p == true)
      {
          NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
          [item setObject:[NSNumber numberWithInt:1] forKey:@"Potion"];
@@ -44,7 +36,7 @@ NSMutableArray* supply;
          [supply addObject:item];
      }
     
-     else if (c)
+     else if (c == true)
      {
          NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
          [item setObject:[NSNumber numberWithInt:0] forKey:@"Potion"];
@@ -54,7 +46,7 @@ NSMutableArray* supply;
          [supply addObject:item];
      }
     
-     else if (p)
+     else if (p == true)
      {
          NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
          [item setObject:[NSNumber numberWithInt:1] forKey:@"Potion"];
@@ -72,6 +64,8 @@ NSMutableArray* supply;
         [item setObject:[NSNumber numberWithInt:0] forKey:@"Colony & Platinum"];
         [supply addObject:item];
     }
+    
+    NSLog(@"%@", supply);
     
     setup.delegate = self;
     setup.dataSource = self;
