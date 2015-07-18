@@ -13,7 +13,7 @@
 #import "Rules.h"
 
 @implementation MasterViewController
-@synthesize table;
+@synthesize table, setup;
 
 JSON *json;
 Cards* cards;
@@ -54,21 +54,25 @@ Card *bane, *potion, *platinum, *colony;
 
 - (NSView*)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    Card* card = [cards cards][row];
-    
-    NSTableCellView* cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
-    
-    if ([tableColumn.identifier isEqualToString:@"card"])
+    NSTableCellView* cell
+    if (tableView == table)
     {
-        [cell.textField setStringValue:[card name]];
-    }
-    else if ([tableColumn.identifier isEqualToString:@"set"])
-    {
+        Card* card = [cards cards][row];
+        
+         cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
+        
+        if ([tableColumn.identifier isEqualToString:@"card"])
+        {
+            [cell.textField setStringValue:[card name]];
+        }
+        else if ([tableColumn.identifier isEqualToString:@"set"])
+        {
             [cell.textField setStringValue:[card collection]];
-    }
-    else
-    {
+        }
+        else
+        {
             [cell.textField setStringValue:[NSString stringWithFormat:@"%d", [card cost]]];
+        }
     }
     
     return cell;

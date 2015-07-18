@@ -182,7 +182,7 @@
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn width="120" minWidth="40" maxWidth="1000" id="AYs-kX-5Lc">
+                                    <tableColumn identifier="cards" width="120" minWidth="40" maxWidth="1000" id="AYs-kX-5Lc">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Card(s)">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -215,7 +215,7 @@
                                             </tableCellView>
                                         </prototypeCellViews>
                                     </tableColumn>
-                                    <tableColumn width="201" minWidth="40" maxWidth="1000" id="s2z-pb-eKe">
+                                    <tableColumn identifier="present" width="201" minWidth="40" maxWidth="1000" id="s2z-pb-eKe">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Present">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
