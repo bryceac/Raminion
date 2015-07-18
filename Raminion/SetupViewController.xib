@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="SetupViewController">
             <connections>
+                <outlet property="setup" destination="xwm-h1-QHj" id="aL2-CD-g9B"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -23,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="DDa-uM-mkZ" viewBased="YES" id="xwm-h1-QHj">
-                                <rect key="frame" x="0.0" y="0.0" width="238" height="117"/>
+                                <rect key="frame" x="0.0" y="0.0" width="238" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>

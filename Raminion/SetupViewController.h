@@ -14,4 +14,6 @@
 }
 
 @property (retain) NSTableView* setup;
+
+- (void)required:(BOOL)c potion:(BOOL)p; // method to populate table with required cards
 @end
