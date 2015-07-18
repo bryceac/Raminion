@@ -13,7 +13,7 @@
 #import "Rules.h"
 
 @implementation MasterViewController
-@synthesize table;
+@synthesize table, setup;
 
 JSON *json;
 Cards* cards;
@@ -33,37 +33,6 @@ Card *bane;
     
     [cards shuffle];
     
-    /* if ([rules potion:[cards cards]] && [rules colony:[cards cards]])
-    {
-        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
-        [item setObject:[NSNumber numberWithInt:1] forKey:@"Potion"];
-        [supply addObject:item];
-        [item removeObjectForKey:@"Potion"];
-        [item setObject:[NSNumber numberWithInt:1] forKey:@"Colony & Platinum"];
-        [supply addObject:item];
-        
-    }
-    if ([rules potion:[cards cards]])
-    {
-        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
-        [item setObject:[NSNumber numberWithInt:0] forKey:@"Potion"];
-        [supply addObject:item];
-        [item removeObjectForKey:@"Potion"];
-        [item setObject:[NSNumber numberWithInt:1] forKey:@"Colony & Platinum"];
-        [supply addObject:item];
-        
-    }
-    if ([rules colony:[cards cards]])
-    {
-        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
-        [item setObject:[NSNumber numberWithInt:1] forKey:@"Potion"];
-        [supply addObject:item];
-        [item removeObjectForKey:@"Potion"];
-        [item setObject:[NSNumber numberWithInt:0] forKey:@"Colony & Platinum"];
-        [supply addObject:item];
-        
-    } */
-    
     table.delegate = self;
     table.dataSource = self;
     
@@ -72,8 +41,6 @@ Card *bane;
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
-    /* if (tableView == table)
-    { */
     bane = [rules bane:[cards cards]];
     
     if (bane != nil)
@@ -83,21 +50,12 @@ Card *bane;
         return 11;
     }
     return 10;
-    /* }
-    else
-    {
-        return supply.count;
-    } */
 }
 
 - (NSView*)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    NSTableCellView* cell;
-    /* if (tableView == table)
-    { */
+    NSTableCellView* cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
     Card* card = [cards cards][row];
-        
-    cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
         
     if ([tableColumn.identifier isEqualToString:@"card"])
     {
@@ -111,23 +69,6 @@ Card *bane;
     {
         [cell.textField setStringValue:[NSString stringWithFormat:@"%d", [card cost]]];
     }
-    /* }
-    else
-    {
-        NSDictionary* current = supply[row];
-        NSString* key = [current allKeys][row];
-        
-        cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
-        
-        if ([tableColumn.identifier isEqualToString:@"cards"])
-        {
-            [cell.textField setStringValue:key];
-        }
-        else
-        {
-            [cell.textField setStringValue:[current valueForKey:key]];
-        }
-    } */
     
     return cell;
 }
