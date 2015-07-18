@@ -41,6 +41,8 @@ Card *bane;
     table.dataSource = self;
     
     [table reloadData];
+    
+    [setup required:[rules colony:[cards cards]] potion:[rules potion:[cards cards]]];
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
