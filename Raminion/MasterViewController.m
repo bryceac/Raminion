@@ -13,7 +13,7 @@
 #import "Rules.h"
 
 @implementation MasterViewController
-@synthesize table, setup;
+@synthesize table;
 
 JSON *json;
 Cards* cards;
@@ -79,46 +79,46 @@ NSMutableArray *supply;
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
-    if (tableView == table)
-    {
-        bane = [rules bane:[cards cards]];
+    /* if (tableView == table)
+    { */
+    bane = [rules bane:[cards cards]];
     
-        if (bane != nil)
-        {
-            int index = [[cards cards] indexOfObject:bane];
-            [[cards cards] exchangeObjectAtIndex:index withObjectAtIndex:10];
-            return 11;
-        }
-        return 10;
+    if (bane != nil)
+    {
+        int index = [[cards cards] indexOfObject:bane];
+        [[cards cards] exchangeObjectAtIndex:index withObjectAtIndex:10];
+        return 11;
     }
+    return 10;
+    /* }
     else
     {
         return supply.count;
-    }
+    } */
 }
 
 - (NSView*)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
     NSTableCellView* cell;
-    if (tableView == table)
+    /* if (tableView == table)
+    { */
+    Card* card = [cards cards][row];
+        
+    cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
+        
+    if ([tableColumn.identifier isEqualToString:@"card"])
     {
-        Card* card = [cards cards][row];
-        
-         cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
-        
-        if ([tableColumn.identifier isEqualToString:@"card"])
-        {
-            [cell.textField setStringValue:[card name]];
-        }
-        else if ([tableColumn.identifier isEqualToString:@"set"])
-        {
-            [cell.textField setStringValue:[card collection]];
-        }
-        else
-        {
-            [cell.textField setStringValue:[NSString stringWithFormat:@"%d", [card cost]]];
-        }
+        [cell.textField setStringValue:[card name]];
     }
+    else if ([tableColumn.identifier isEqualToString:@"set"])
+    {
+        [cell.textField setStringValue:[card collection]];
+    }
+    else
+    {
+        [cell.textField setStringValue:[NSString stringWithFormat:@"%d", [card cost]]];
+    }
+    /* }
     else
     {
         NSDictionary* current = supply[row];
@@ -134,7 +134,7 @@ NSMutableArray *supply;
         {
             [cell.textField setStringValue:[current valueForKey:key]];
         }
-    }
+    } */
     
     return cell;
 }
