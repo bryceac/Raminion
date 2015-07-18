@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SetupViewController : NSViewController
+@interface SetupViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource>
+{
+    IBOutlet NSTableView* setup;
+}
 
+@property (retain) NSTableView* setup;
 @end
