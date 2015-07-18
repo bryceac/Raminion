@@ -11,9 +11,11 @@
 @interface MasterViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource>
 {
     IBOutlet NSTableView* table;
+    IBOutlet NSTableView* setup;
 }
 
 @property (retain) NSTableView* table;
+@property (retain) NSTableView* setup;
 
 - (IBAction)shuffle:(id)sender;
 
