@@ -23,6 +23,10 @@ Card *bane;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
+    
+    setup = [[SetupViewController alloc] initWithNibName:@"SetupViewController" bundle:nil];
+    [self addChildViewController:setup];
+    [self.view addSubview:setup.view];
 }
 
 - (IBAction)shuffle:(id)sender
