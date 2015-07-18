@@ -18,7 +18,8 @@
 JSON *json;
 Cards* cards;
 Rules* rules;
-Card *bane, *potion, *platinum, *colony;
+Card *bane;
+NSMutableArray *supply;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,31 +31,75 @@ Card *bane, *potion, *platinum, *colony;
     json = [[JSON alloc] initWithFile:@"dominion"];
     cards = [[Cards alloc] initWithSupply:[json supply]];
     rules = [[Rules alloc] init];
+    supply = [[NSMutableArray alloc] init];
     
     [cards shuffle];
+    
+    if ([rules potion:[cards cards]] && [rules colony:[cards cards]])
+    {
+        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
+        [item setObject:[NSNumber numberWithInt:1] forKey:@"Potion"];
+        [supply addObject:item];
+        [item removeObjectForKey:@"Potion"];
+        [item setObject:[NSNumber numberWithInt:1] forKey:@"Colony & Platinum"];
+        [supply addObject:item];
+        
+    }
+    if ([rules potion:[cards cards]])
+    {
+        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
+        [item setObject:[NSNumber numberWithInt:0] forKey:@"Potion"];
+        [supply addObject:item];
+        [item removeObjectForKey:@"Potion"];
+        [item setObject:[NSNumber numberWithInt:1] forKey:@"Colony & Platinum"];
+        [supply addObject:item];
+        
+    }
+    if ([rules colony:[cards cards]])
+    {
+        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
+        [item setObject:[NSNumber numberWithInt:1] forKey:@"Potion"];
+        [supply addObject:item];
+        [item removeObjectForKey:@"Potion"];
+        [item setObject:[NSNumber numberWithInt:0] forKey:@"Colony & Platinum"];
+        [supply addObject:item];
+        
+    }
     
     table.delegate = self;
     table.dataSource = self;
     
     [table reloadData];
+    
+    setup.delegate = self;
+    setup.dataSource = self;
+    
+    [setup reloadData];
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
-    bane = [rules bane:[cards cards]];
-    
-    if (bane != nil)
+    if (tableView == table)
     {
-        int index = [[cards cards] indexOfObject:bane];
-        [[cards cards] exchangeObjectAtIndex:index withObjectAtIndex:10];
-        return 11;
+        bane = [rules bane:[cards cards]];
+    
+        if (bane != nil)
+        {
+            int index = [[cards cards] indexOfObject:bane];
+            [[cards cards] exchangeObjectAtIndex:index withObjectAtIndex:10];
+            return 11;
+        }
+        return 10;
     }
-    return 10;
+    else
+    {
+        return supply.count;
+    }
 }
 
 - (NSView*)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    NSTableCellView* cell
+    NSTableCellView* cell;
     if (tableView == table)
     {
         Card* card = [cards cards][row];
@@ -72,6 +117,22 @@ Card *bane, *potion, *platinum, *colony;
         else
         {
             [cell.textField setStringValue:[NSString stringWithFormat:@"%d", [card cost]]];
+        }
+    }
+    else
+    {
+        NSDictionary* current = supply[row];
+        NSString* key = [current allKeys][row];
+        
+        cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
+        
+        if ([tableColumn.identifier isEqualToString:@"cards"])
+        {
+            [cell.textField setStringValue:key];
+        }
+        else
+        {
+            [cell.textField setStringValue:[current valueForKey:key]];
         }
     }
     
