@@ -20,6 +20,8 @@
 		6CC8E9A51B58073D004E0A20 /* JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC8E9A41B58073D004E0A20 /* JSON.m */; };
 		6CC8E9A81B581135004E0A20 /* Cards.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC8E9A71B581135004E0A20 /* Cards.m */; };
 		6CC8E9AB1B5812AF004E0A20 /* Shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC8E9AA1B5812AF004E0A20 /* Shuffle.m */; };
+		6CCFD1DF1B5B006F00EBF86A /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCFD1DD1B5B006F00EBF86A /* SetupViewController.m */; };
+		6CCFD1E01B5B006F00EBF86A /* SetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CCFD1DE1B5B006F00EBF86A /* SetupViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,9 @@
 		6CC8E9A71B581135004E0A20 /* Cards.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cards.m; sourceTree = "<group>"; };
 		6CC8E9A91B5812AF004E0A20 /* Shuffle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shuffle.h; sourceTree = "<group>"; };
 		6CC8E9AA1B5812AF004E0A20 /* Shuffle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shuffle.m; sourceTree = "<group>"; };
+		6CCFD1DC1B5B006F00EBF86A /* SetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupViewController.h; sourceTree = "<group>"; };
+		6CCFD1DD1B5B006F00EBF86A /* SetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupViewController.m; sourceTree = "<group>"; };
+		6CCFD1DE1B5B006F00EBF86A /* SetupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetupViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +121,9 @@
 				6CC8E9AA1B5812AF004E0A20 /* Shuffle.m */,
 				6C5368021B5968970051DA8A /* Rules.h */,
 				6C5368031B5968970051DA8A /* Rules.m */,
+				6CCFD1DC1B5B006F00EBF86A /* SetupViewController.h */,
+				6CCFD1DD1B5B006F00EBF86A /* SetupViewController.m */,
+				6CCFD1DE1B5B006F00EBF86A /* SetupViewController.xib */,
 			);
 			path = Raminion;
 			sourceTree = "<group>";
@@ -228,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C87D0B41B573000008C0260 /* MasterViewController.xib in Resources */,
+				6CCFD1E01B5B006F00EBF86A /* SetupViewController.xib in Resources */,
 				6C87D0961B572F60008C0260 /* Images.xcassets in Resources */,
 				6C87D0AF1B572F99008C0260 /* dominion.json in Resources */,
 				6C87D0991B572F60008C0260 /* MainMenu.xib in Resources */,
@@ -255,6 +264,7 @@
 				6CC8E9A81B581135004E0A20 /* Cards.m in Sources */,
 				6C5368041B5968970051DA8A /* Rules.m in Sources */,
 				6C87D0921B572F60008C0260 /* AppDelegate.m in Sources */,
+				6CCFD1DF1B5B006F00EBF86A /* SetupViewController.m in Sources */,
 				6CC8E9A21B57FE47004E0A20 /* Card.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

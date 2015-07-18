@@ -19,7 +19,6 @@ JSON *json;
 Cards* cards;
 Rules* rules;
 Card *bane;
-NSMutableArray *supply;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,11 +30,10 @@ NSMutableArray *supply;
     json = [[JSON alloc] initWithFile:@"dominion"];
     cards = [[Cards alloc] initWithSupply:[json supply]];
     rules = [[Rules alloc] init];
-    supply = [[NSMutableArray alloc] init];
     
     [cards shuffle];
     
-    if ([rules potion:[cards cards]] && [rules colony:[cards cards]])
+    /* if ([rules potion:[cards cards]] && [rules colony:[cards cards]])
     {
         NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
         [item setObject:[NSNumber numberWithInt:1] forKey:@"Potion"];
@@ -64,17 +62,12 @@ NSMutableArray *supply;
         [item setObject:[NSNumber numberWithInt:0] forKey:@"Colony & Platinum"];
         [supply addObject:item];
         
-    }
+    } */
     
     table.delegate = self;
     table.dataSource = self;
     
     [table reloadData];
-    
-    setup.delegate = self;
-    setup.dataSource = self;
-    
-    [setup reloadData];
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
