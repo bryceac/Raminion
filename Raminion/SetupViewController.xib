@@ -18,7 +18,7 @@
             <subviews>
                 <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="Vvg-v2-WVa">
                     <rect key="frame" x="240" y="0.0" width="240" height="208"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                     <clipView key="contentView" id="V3K-Ci-cmP">
                         <rect key="frame" x="1" y="17" width="238" height="117"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
