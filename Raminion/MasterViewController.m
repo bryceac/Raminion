@@ -49,17 +49,17 @@ Card *bane;
     
     [table reloadData];
     
-    [setup required:[rules colony:[cards cards]] potion:[rules potion:[cards cards]]];
+    [setup required:[rules colony:cards] potion:[rules potion:cards]];
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
-    bane = [rules bane:[cards cards]];
+    bane = [rules bane:cards];
     
     if (bane != nil)
     {
-        int index = [[cards cards] indexOfObject:bane];
-        [[cards cards] exchangeObjectAtIndex:index withObjectAtIndex:10];
+        int index = [cards indexOfObject:bane];
+        [cards exchangeObjectAtIndex:index withObjectAtIndex:10];
         return 11;
     }
     return 10;
@@ -68,7 +68,7 @@ Card *bane;
 - (NSView*)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
     NSTableCellView* cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
-    Card* card = [cards cards][row];
+    Card* card = cards[row];
         
     if ([tableColumn.identifier isEqualToString:@"card"])
     {
