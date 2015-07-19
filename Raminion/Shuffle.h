@@ -10,8 +10,9 @@
 
 @interface Shuffle : NSObject
 
-- (id) initWithSupply:(NSArray*)s;
+- (id) initWithSupply:(NSArray*)s; // custom initializer
 
+// acessor methods that randomize array and return a new array
 - (NSMutableArray*)shuffle:(NSArray*)s;
 
 - (NSMutableArray*)shuffle:(NSArray*)s limit:(int)n;

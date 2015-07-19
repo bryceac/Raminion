@@ -12,11 +12,13 @@
 
 @implementation Shuffle
 
+// default initializer
 - (id) init
 {
     return [self initWithArray:nil];
 }
 
+// main initializer
 - (id) initWithArray:(NSMutableArray*)a
 {
     if (self = [super init])
@@ -26,10 +28,12 @@
     return self;
 }
 
+// shuffle method takes all cards and randomizes them
 - (NSMutableArray*)shuffle:(NSArray*)s
 {
-    Cards* cards = [[Cards alloc] initWithSupply:s];
+    Cards* cards = [[Cards alloc] initWithSupply:s]; // create Cards object
     
+    // perform shuffle
     for (int i = 0; i < [[cards cards] count]; i++)
     {
         int randValue = arc4random_uniform((uint32_t)[[cards cards] count]);
@@ -38,11 +42,13 @@
     return [cards cards];
 }
 
+// variant of shuffle method that takes cards from only a certain number of sets
 - (NSMutableArray*)shuffle:(NSArray*)s limit:(int)n
 {
     Cards* cards = [[Cards alloc] init];
-    NSMutableSet* sets = [[NSMutableSet alloc] initWithCapacity:n];
+    NSMutableSet* sets = [[NSMutableSet alloc] initWithCapacity:n]; // create set object that has a specified capacity
     
+    // populate the set
     for (int i = 0; i < [s count]; i++) {
         NSDictionary* item = [s objectAtIndex:i];
         if ([sets count] < n) {
@@ -50,7 +56,7 @@
         }
     }
     
-    [cards createCards:s limit:sets];
+    [cards createCards:s limit:sets]; // create supply based on the set
     
     for (int h = 0; h < [[cards cards] count]; h++)
     {
