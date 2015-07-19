@@ -15,8 +15,8 @@
 @implementation MasterViewController
 @synthesize limit, table, setup;
 
-JSON *json;
-Cards* cards;
+// JSON *json;
+// Cards* cards;
 Rules* rules;
 Card *bane;
 
@@ -31,8 +31,8 @@ Card *bane;
 
 - (IBAction)shuffle:(id)sender
 {
-    json = [[JSON alloc] initWithFile:@"dominion"];
-    cards = [[Cards alloc] initWithSupply:[json supply]];
+    // json = [[JSON alloc] initWithFile:@"dominion"];
+    // cards = [[Cards alloc] initWithSupply:[json supply]];
     rules = [[Rules alloc] init];
     
     int max = limit.stringValue.intValue;

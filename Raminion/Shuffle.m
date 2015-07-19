@@ -8,6 +8,7 @@
 
 #import "Shuffle.h"
 #import "Card.h"
+#import "Cards.h"
 
 @implementation Shuffle
 
@@ -25,7 +26,7 @@
     return self;
 }
 
-- (NSMutableArray*)shuffle:(NSMutableArray *)s
+- (NSMutableArray*)shuffle:(NSArray*)s
 {
     for (int i = 0; i < [s count]; i++)
     {
@@ -35,7 +36,7 @@
     return s;
 }
 
-- (NSMutableArray*)shuffle:(NSMutableArray *)s andSetLimit:(int)n
+- (NSMutableArray*)shuffle:(NSArray*)s limit:(int)n
 {
     NSMutableSet* sets = [[NSMutableSet alloc] initWithCapacity:n];
     

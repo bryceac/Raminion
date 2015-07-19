@@ -10,10 +10,10 @@
 
 @interface Shuffle : NSObject
 
-- (id) initWithArray:(NSMutableArray*)a;
+- (id) initWithSupply:(NSArray*)s;
 
-- (NSMutableArray*)shuffle:(NSMutableArray*)s;
+- (NSMutableArray*)shuffle:(NSArray*)s;
 
-- (NSMutableArray*)shuffle:(NSMutableArray*)s andSetLimit:(int)n;
+- (NSMutableArray*)shuffle:(NSArray*)s limit:(int)n;
 
 @end

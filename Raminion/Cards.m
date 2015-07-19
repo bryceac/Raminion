@@ -8,7 +8,6 @@
 
 #import "Cards.h"
 #import "Card.h"
-#import "Shuffle.h"
 
 @implementation Cards
 
@@ -46,20 +45,6 @@
         
         [cards addObject:card];
     }
-}
-
-- (void)shuffle
-{
-    Shuffle* shuffle = [[Shuffle alloc] init];
-    
-    cards = [shuffle shuffle:cards];
-}
-
-- (void)shuffle:(int)n
-{
-    Shuffle* shuffle = [[Shuffle alloc] init];
-    
-    cards = [shuffle shuffle:cards andSetLimit:n];
 }
 
 - (NSMutableArray*)cards
