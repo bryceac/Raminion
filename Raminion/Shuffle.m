@@ -9,6 +9,7 @@
 #import "Shuffle.h"
 #import "Card.h"
 #import "Cards.h"
+#import "JSON.h"
 
 @implementation Shuffle
 
@@ -28,42 +29,37 @@
 
 - (NSMutableArray*)shuffle:(NSArray*)s
 {
-    for (int i = 0; i < [s count]; i++)
+    Cards* cards = [[Cards alloc] initWithSupply:s];
+    
+    for (int i = 0; i < [[cards cards] count]; i++)
     {
-        int randValue = arc4random_uniform((uint32_t)[s count]);
-        [s exchangeObjectAtIndex:i withObjectAtIndex:randValue];
+        int randValue = arc4random_uniform((uint32_t)[[cards cards] count]);
+        [[cards cards] exchangeObjectAtIndex:i withObjectAtIndex:randValue];
     }
-    return s;
+    return [cards cards];
 }
 
 - (NSMutableArray*)shuffle:(NSArray*)s limit:(int)n
 {
+    Cards* cards = [[Cards alloc] init];
     NSMutableSet* sets = [[NSMutableSet alloc] initWithCapacity:n];
+    
+    for (int i = 0; i < [s count]; i++) {
+        NSDictionary* item = [s objectAtIndex:i];
+        if ([sets count] < n) {
+            [sets addObject:[item objectForKey:@"set"]];
+        }
+    }
+    
+    [cards createCards:s limit:sets];
     
     for (int h = 0; h < [s count]; h++)
     {
-        int randValue = arc4random_uniform((uint32_t)[s count]);
-        [s exchangeObjectAtIndex:h withObjectAtIndex:randValue];
+        int randValue = arc4random_uniform((uint32_t)[[cards cards] count]);
+        [[cards cards] exchangeObjectAtIndex:h withObjectAtIndex:randValue];
     }
     
-    
-        for (int i = 0; i < [s count]; i++) {
-            if ([sets count] < n && [s[i] isKindOfClass:[Card class]]) {
-                [sets addObject:[s[i] collection]];
-            }
-        }
-    
-    NSLog(@"sets: %@", sets);
-    
-    for (int j = 0; j < [s count]; j++)
-    {
-        NSString* set = [s[j] collection];
-        BOOL contains = [sets containsObject:set];
-        if (!contains) {
-            [s removeObjectAtIndex:j];
-        }
-    }
-    return s;
+    return [cards cards];
 }
 
 @end

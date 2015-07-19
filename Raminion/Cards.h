@@ -15,7 +15,11 @@
 
 - (id) initWithSupply:(NSArray*)s;
 
+- (id) initWithSupply:(NSArray*)s limit:(NSMutableSet*)l;
+
 - (void)createCards:(NSArray*)s;
+
+- (void)createCards:(NSArray*)s limit:(NSMutableSet*)l;
 
 - (void)shuffle;
 
