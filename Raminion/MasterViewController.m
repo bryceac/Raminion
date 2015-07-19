@@ -10,13 +10,13 @@
 #import "Card.h"
 #import "Rules.h"
 #import "Shuffle.h"
+#import "JSON.h"
 
 @implementation MasterViewController
 @synthesize limit, table, setup;
 
 Rules* rules;
 Card *bane;
-Shuffle* shuffle;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,16 +29,19 @@ Shuffle* shuffle;
 
 - (IBAction)shuffle:(id)sender
 {
+    cards = [[NSMutableArray alloc] init];
+    Shuffle* shuffle = [[Shuffle alloc] init];
+    JSON* json = [[JSON alloc] initWithFile:@"dominion"];
     rules = [[Rules alloc] init];
     
     int max = limit.stringValue.intValue;
     
     if (max != 0) {
-        [cards shuffle:max];
+        cards = [shuffle shuffle:[json supply] limit:max];
     }
     else
     {
-        [cards shuffle];
+        cards = [shuffle shuffle:[json supply]];
     }
     
     table.delegate = self;
