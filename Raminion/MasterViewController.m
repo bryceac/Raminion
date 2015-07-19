@@ -13,7 +13,7 @@
 #import "Rules.h"
 
 @implementation MasterViewController
-@synthesize table, setup;
+@synthesize limit, table, setup;
 
 JSON *json;
 Cards* cards;

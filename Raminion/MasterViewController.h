@@ -12,11 +12,13 @@
 @interface MasterViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource>
 {
     IBOutlet NSTableView* table;
+    IBOutlet NSTextField* limit;
     SetupViewController* setup;
 }
 
 @property (retain) NSTableView* table;
 @property (retain) SetupViewController* setup;
+@property (retain) NSTextField* limit;
 
 - (IBAction)shuffle:(id)sender;
 
