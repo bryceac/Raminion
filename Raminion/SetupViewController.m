@@ -80,7 +80,7 @@
     
     cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
     NSDictionary* current = supply[row];
-    NSString* key = [current allKeys][row];
+    NSString* key = [current allKeys][0];
     int value = [[current valueForKey:key] integerValue];
      
     cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
