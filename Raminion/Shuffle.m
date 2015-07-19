@@ -45,16 +45,15 @@
         [s exchangeObjectAtIndex:h withObjectAtIndex:randValue];
     }
     
-    for (int i = 0; i < [s count]; i++) {
+    
         while ([sets count] < n)
         {
-            if ([s[i] isKindOfClass:[Card class]]) {
-                [sets addObject:[s[i] collection]];
+            for (int i = 0; i < [s count]; i++) {
+                if ([s[i] isKindOfClass:[Card class]]) {
+                    [sets addObject:[s[i] collection]];
+                }
             }
         }
-        
-        i = [s count];
-    }
     
     NSLog(@"sets: %@", sets);
     
