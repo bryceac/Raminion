@@ -35,7 +35,13 @@ Card *bane;
     cards = [[Cards alloc] initWithSupply:[json supply]];
     rules = [[Rules alloc] init];
     
-    [cards shuffle];
+    if (limit.stringValue != nil && limit.stringValue.intValue != 0) {
+        [cards shuffle:limit.stringValue.intValue];
+    }
+    else
+    {
+        [cards shuffle];
+    }
     
     table.delegate = self;
     table.dataSource = self;
