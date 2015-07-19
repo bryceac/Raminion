@@ -10,10 +10,10 @@
 
 @interface Card : NSObject
 {
-    NSString *name, *collection;
-    NSArray* types;
-    int cost;
-    BOOL potion;
+    NSString *name, *collection; // variable to hold card name and set name
+    NSArray* types; // array that will contain what kind of card an object is
+    int cost; // variable that holds that card's price
+    BOOL potion; // variable that specifies whether a potion is needed to buy it or not
 }
 
 // custom initializer method

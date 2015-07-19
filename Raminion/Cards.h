@@ -10,13 +10,15 @@
 
 @interface Cards : NSObject
 {
-    NSMutableArray* cards;
+    NSMutableArray* cards; // variable to hold cards
 }
 
+// custom initializer methods
 - (id) initWithSupply:(NSArray*)s;
 
 - (id) initWithSupply:(NSArray*)s limit:(NSMutableSet*)l;
 
+// setter and accessor methods to populate and retrieve cards respectively
 - (void)createCards:(NSArray*)s;
 
 - (void)createCards:(NSArray*)s limit:(NSMutableSet*)l;

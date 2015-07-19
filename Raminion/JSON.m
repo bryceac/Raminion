@@ -10,11 +10,13 @@
 
 @implementation JSON
 
+// default initializer
 - (id) init
 {
     return [self initWithFile:nil];
 }
 
+// main initializer
 - (id) initWithFile:(NSString*)f
 {
     if (self = [super init])
@@ -28,13 +30,13 @@
 
 - (void)createJSON:(NSString *)f
 {
-    NSString* path = [[NSBundle mainBundle] pathForResource:f ofType:@"json"];
+    NSString* path = [[NSBundle mainBundle] pathForResource:f ofType:@"json"]; // retrieve location of JSON file
     
-    NSString* content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    NSString* content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil]; // get file contents
     
-    json = [NSJSONSerialization JSONObjectWithData:[content dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
+    json = [NSJSONSerialization JSONObjectWithData:[content dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil]; // convert file contents to dictionary
     
-    [self createSupply:json];
+    [self createSupply:json]; // create array from file content
 }
 
 - (NSDictionary*)json
@@ -44,7 +46,7 @@
 
 - (void)createSupply:(NSDictionary *)j
 {
-    supply = [j objectForKey:@"cards"];
+    supply = [j objectForKey:@"cards"]; // look for key called cards and assign it to the array variable
 }
 
 - (NSArray*)supply

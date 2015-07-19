@@ -20,6 +20,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
     
+    // add custom view controller to window
     self.masterView = [[MasterViewController alloc] initWithNibName:@"MasterViewController" bundle:nil];
     
     [self.window.contentView addSubview:self.masterView.view];

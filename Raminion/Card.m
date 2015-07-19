@@ -29,6 +29,7 @@
     return self;
 }
 
+// implement all setter and accessors methods
 - (void) setName:(NSString *)n
 {
     name = n;
