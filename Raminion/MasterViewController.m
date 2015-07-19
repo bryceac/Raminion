@@ -15,13 +15,14 @@
 @implementation MasterViewController
 @synthesize limit, table, setup;
 
-Rules* rules;
-Card *bane;
+Rules* rules; // variable used to determine what is needed each game
+Card *bane; // variable to hold the bane card, if it is needed
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
     
+    // add child view controller
     setup = [[SetupViewController alloc] initWithNibName:@"SetupViewController" bundle:nil];
     [self addChildViewController:setup];
     [self.view addSubview:setup.view];
@@ -29,13 +30,15 @@ Card *bane;
 
 - (IBAction)shuffle:(id)sender
 {
-    cards = [[NSMutableArray alloc] init];
-    Shuffle* shuffle = [[Shuffle alloc] init];
-    JSON* json = [[JSON alloc] initWithFile:@"dominion"];
-    rules = [[Rules alloc] init];
+    cards = [[NSMutableArray alloc] init]; // array used to populate main table
+    Shuffle* shuffle = [[Shuffle alloc] init]; // object used for shuffling cards
+    JSON* json = [[JSON alloc] initWithFile:@"dominion"]; // initial json object with the file that contains card info
+    rules = [[Rules alloc] init]; // create rules object, so that game needs can be implemented
     
+    // retrieve max number of sets that the user wants to have.
     int max = limit.stringValue.intValue;
     
+    // if user specified a max amount of sets, shuffle cards only belonging that that specified amount of sets
     if (max != 0) {
         cards = [shuffle shuffle:[json supply] limit:max];
     }
@@ -44,18 +47,21 @@ Card *bane;
         cards = [shuffle shuffle:[json supply]];
     }
     
+    // specify table delegate and dataSource
     table.delegate = self;
     table.dataSource = self;
     
-    [table reloadData];
+    [table reloadData]; // refresh table so that content will appear
     
-    [setup required:[rules colony:cards] potion:[rules potion:cards]];
+    [setup required:[rules colony:cards] potion:[rules potion:cards]]; // make sure that setup table is populated
 }
 
+// numberofRowsInTableView specifies the number of rows that will appear
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
-    bane = [rules bane:cards];
+    bane = [rules bane:cards]; // retrieve Bane card
     
+    // if there is a Bane, make sure it is the 11th item and that there are 11 rows, otherwise return only ten rows
     if (bane != nil)
     {
         int index = [cards indexOfObject:bane];
@@ -65,6 +71,7 @@ Card *bane;
     return 10;
 }
 
+// the following method is needed to populate an NSTableView
 - (NSView*)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
     NSTableCellView* cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];

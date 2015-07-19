@@ -11,16 +11,17 @@
 
 @interface MasterViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource>
 {
-    IBOutlet NSTableView* table;
-    IBOutlet NSTextField* limit;
-    SetupViewController* setup;
-    NSMutableArray* cards;
+    IBOutlet NSTableView* table; // variable for table view
+    IBOutlet NSTextField* limit; // variable to read textfield input
+    SetupViewController* setup; // variable to hold a child view controller
+    NSMutableArray* cards; // create variable needed for table
 }
 
+// the following makes the variables used for GUI elements to be synthesizable;
 @property (retain) NSTableView* table;
 @property (retain) SetupViewController* setup;
 @property (retain) NSTextField* limit;
 
-- (IBAction)shuffle:(id)sender;
+- (IBAction)shuffle:(id)sender; // button action that will perform shuffling and other duties
 
 @end
