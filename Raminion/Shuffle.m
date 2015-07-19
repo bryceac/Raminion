@@ -58,7 +58,7 @@
     {
         NSString* set = [s[j] collection];
         BOOL contains = [sets containsObject:set];
-        if ([s[j] isKindOfClass:[Card class]] &&  contains == false) {
+        if (!contains) {
             [s removeObjectAtIndex:j];
         }
     }
