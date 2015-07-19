@@ -11,7 +11,7 @@
 
 @interface Rules : NSObject
 
-- (BOOL)colony:(NSMutableArray*)c;
-- (BOOL)potion:(NSMutableArray*)c;
-- (Card*)bane:(NSMutableArray*)c;
+- (BOOL)colony:(NSMutableArray*)c; // method to determine if Colonies and Platinum are used
+- (BOOL)potion:(NSMutableArray*)c; // method to check if potion is needed
+- (Card*)bane:(NSMutableArray*)c; // method to determine Bane card
 @end

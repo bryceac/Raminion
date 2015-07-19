@@ -10,11 +10,11 @@
 
 @interface SetupViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource>
 {
-    IBOutlet NSTableView* setup;
-    NSMutableArray* supply;
+    IBOutlet NSTableView* setup; // variable to control the preparation table
+    NSMutableArray* supply; // variable that will hold cards needed for various games and whether or not they are needed
 }
 
-@property (retain) NSTableView* setup;
+@property (retain) NSTableView* setup; // allow setup table to be synthesizable
 
 - (void)required:(BOOL)c potion:(BOOL)p; // method to populate table with required cards
 @end

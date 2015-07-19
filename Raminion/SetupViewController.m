@@ -20,55 +20,46 @@
     // Do view setup here.
 }
 
+// the required method determines cards needed. Boolean variables are passed to make that determination
 - (void)required:(BOOL)c potion:(BOOL)p
 {
-    supply = [[NSMutableArray alloc] init];
+    supply = [[NSMutableArray alloc] init]; // initialize array, in order to use it
     
-    if (c == true && p == true)
-     {
-         NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
-         [item setObject:[NSNumber numberWithInt:1] forKey:@"Potion"];
-         [supply addObject:item];
-         [item removeObjectForKey:@"Potion"];
-         [item setObject:[NSNumber numberWithInt:1] forKey:@"Colony & Platinum"];
-         [supply addObject:item];
-     }
-    
-     else if (c == true && p == false)
-     {
-         NSMutableDictionary *potion = [[NSMutableDictionary alloc] init];
-         [potion setObject:[NSNumber numberWithInt:0] forKey:@"Potion"];
-         [supply addObject:potion];
-         NSMutableDictionary *colony = [[NSMutableDictionary alloc] init];
-         [colony setObject:[NSNumber numberWithInt:1] forKey:@"Colony & Platinum"];
-         [supply addObject:colony];
-     }
-    
-     else if (c == false && p == true)
-     {
-         NSMutableDictionary *potion = [[NSMutableDictionary alloc] init];
-         [potion setObject:[NSNumber numberWithInt:1] forKey:@"Potion"];
-         [supply addObject:potion];
-         NSMutableDictionary *colony = [[NSMutableDictionary alloc] init];
-         [colony setObject:[NSNumber numberWithInt:0] forKey:@"Colony & Platinum"];
-         [supply addObject:colony];
-     }
+    // check if for cards needed for setup
+    if (c == true)
+    {
+        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
+        [item setObject:[NSNumber numberWithInt:1] forKey:@"Colony & Platinum"];
+        [supply addObject:item];
+    }
     else
     {
-        NSMutableDictionary *potion = [[NSMutableDictionary alloc] init];
-        [potion setObject:[NSNumber numberWithInt:0] forKey:@"Potion"];
-        [supply addObject:potion];
-        NSMutableDictionary *colony = [[NSMutableDictionary alloc] init];
-        [colony setObject:[NSNumber numberWithInt:0] forKey:@"Colony & Platinum"];
-        [supply addObject:colony];
+        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
+        [item setObject:[NSNumber numberWithInt:0] forKey:@"Colony & Platinum"];
+        [supply addObject:item];
     }
     
+    if (p == true)
+    {
+        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
+        [item setObject:[NSNumber numberWithInt:1] forKey:@"Potion"];
+        [supply addObject:item];
+    }
+    else
+    {
+        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
+        [item setObject:[NSNumber numberWithInt:0] forKey:@"Potion"];
+        [supply addObject:item];
+    }
+    
+    // assign delegate and dataSource to table
     setup.delegate = self;
     setup.dataSource = self;
     
-    [setup reloadData];
+    [setup reloadData]; // refresh table, in order to populate it
 }
 
+// the following methods work the same as the MasterViewController table, but with data meant for setup
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
      return [supply count];
@@ -80,8 +71,8 @@
     
     cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
     NSDictionary* current = supply[row];
-    NSString* key = [current allKeys][0];
-    int value = [[current valueForKey:key] integerValue];
+    NSString* key = [current allKeys][0]; // get the key of the current dictionary must be 0, as there is only one key
+    int value = [[current valueForKey:key] integerValue]; // variable to hold key value
      
     cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
      
