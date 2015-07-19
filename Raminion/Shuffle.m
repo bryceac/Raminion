@@ -39,12 +39,16 @@
 {
     NSMutableSet* sets = [[NSMutableSet alloc] initWithCapacity:n];
     
-    while ([sets count] < n)
-    {
-        int randSet = arc4random_uniform((uint32_t)[s count]);
-        if ([s[randSet] isKindOfClass:[Card class]]) {
-            [sets addObject:[s[randSet] collection]];
+    for (int h = 0; h < [s count]; h++) {
+        while ([sets count] < n)
+        {
+            int randSet = arc4random_uniform((uint32_t)[s count]);
+            if ([s[randSet] isKindOfClass:[Card class]]) {
+                [sets addObject:[s[randSet] collection]];
+            }
         }
+        
+        h = [s count];
     }
     
     for (int i = 0; i < [s count]; i++)
