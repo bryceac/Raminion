@@ -21,10 +21,6 @@
 
 - (void)createCards:(NSArray*)s limit:(NSMutableSet*)l;
 
-- (void)shuffle;
-
-- (void)shuffle:(int)n;
-
 - (NSMutableArray*)cards;
 
 @end

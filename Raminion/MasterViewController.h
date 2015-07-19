@@ -14,6 +14,7 @@
     IBOutlet NSTableView* table;
     IBOutlet NSTextField* limit;
     SetupViewController* setup;
+    NSMutableArray* cards;
 }
 
 @property (retain) NSTableView* table;
