@@ -35,4 +35,32 @@
     return s;
 }
 
+- (NSMutableArray*)shuffle:(NSMutableArray *)s andSetLimit:(int)n
+{
+    NSMutableSet* sets = [[NSMutableSet alloc] initWithCapacity:n];
+    
+    for (int h = 0; h < [sets count]; h++)
+    {
+        int randSet = arc4random_uniform((uint32_t)[s count]);
+        if ([s[randSet] isKindOfClass:[Card class]]) {
+            [sets addObject:[s[randSet] collection]];
+        }
+    }
+    
+    for (int i = 0; i < [sets count]; i++)
+    {
+        int randSet = arc4random_uniform((uint32_t)[s count]);
+        if ([s[i] isKindOfClass:[Card class]] && [sets containsObject:[s[i] collection]] == false) {
+            [s removeObject:s[i]];
+        }
+    }
+    
+    for (int j = 0; j < [s count]; j++)
+    {
+        int randValue = arc4random_uniform((uint32_t)[s count]);
+        [s exchangeObjectAtIndex:j withObjectAtIndex:randValue];
+    }
+    return s;
+}
+
 @end

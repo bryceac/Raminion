@@ -14,4 +14,6 @@
 
 - (NSMutableArray*)shuffle:(NSMutableArray*)s;
 
+- (NSMutableArray*)shuffle:(NSMutableArray*)s andSetLimit:(int)n;
+
 @end
