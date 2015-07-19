@@ -15,8 +15,6 @@
 @implementation SetupViewController
 @synthesize setup;
 
-NSMutableArray* supply;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
@@ -36,36 +34,34 @@ NSMutableArray* supply;
          [supply addObject:item];
      }
     
-     else if (c == true)
+     else if (c == true && p == false)
      {
-         NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
-         [item setObject:[NSNumber numberWithInt:0] forKey:@"Potion"];
-         [supply addObject:item];
-         [item removeObjectForKey:@"Potion"];
-         [item setObject:[NSNumber numberWithInt:1] forKey:@"Colony & Platinum"];
-         [supply addObject:item];
+         NSMutableDictionary *potion = [[NSMutableDictionary alloc] init];
+         [potion setObject:[NSNumber numberWithInt:0] forKey:@"Potion"];
+         [supply addObject:potion];
+         NSMutableDictionary *colony = [[NSMutableDictionary alloc] init];
+         [colony setObject:[NSNumber numberWithInt:1] forKey:@"Colony & Platinum"];
+         [supply addObject:colony];
      }
     
-     else if (p == true)
+     else if (c == false && p == true)
      {
-         NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
-         [item setObject:[NSNumber numberWithInt:1] forKey:@"Potion"];
-         [supply addObject:item];
-         [item removeObjectForKey:@"Potion"];
-         [item setObject:[NSNumber numberWithInt:0] forKey:@"Colony & Platinum"];
-         [supply addObject:item];
+         NSMutableDictionary *potion = [[NSMutableDictionary alloc] init];
+         [potion setObject:[NSNumber numberWithInt:1] forKey:@"Potion"];
+         [supply addObject:potion];
+         NSMutableDictionary *colony = [[NSMutableDictionary alloc] init];
+         [colony setObject:[NSNumber numberWithInt:0] forKey:@"Colony & Platinum"];
+         [supply addObject:colony];
      }
     else
     {
-        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
-        [item setObject:[NSNumber numberWithInt:0] forKey:@"Potion"];
-        [supply addObject:item];
-        [item removeObjectForKey:@"Potion"];
-        [item setObject:[NSNumber numberWithInt:0] forKey:@"Colony & Platinum"];
-        [supply addObject:item];
+        NSMutableDictionary *potion = [[NSMutableDictionary alloc] init];
+        [potion setObject:[NSNumber numberWithInt:0] forKey:@"Potion"];
+        [supply addObject:potion];
+        NSMutableDictionary *colony = [[NSMutableDictionary alloc] init];
+        [colony setObject:[NSNumber numberWithInt:0] forKey:@"Colony & Platinum"];
+        [supply addObject:colony];
     }
-    
-    NSLog(@"%@", supply);
     
     setup.delegate = self;
     setup.dataSource = self;
@@ -75,7 +71,7 @@ NSMutableArray* supply;
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
-     return supply.count;
+     return [supply count];
 }
 
 - (NSView*)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
@@ -85,6 +81,7 @@ NSMutableArray* supply;
     cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
     NSDictionary* current = supply[row];
     NSString* key = [current allKeys][row];
+    int value = [[current valueForKey:key] integerValue];
      
     cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
      
@@ -94,7 +91,7 @@ NSMutableArray* supply;
     }
     else
     {
-        if ([[current valueForKey:key] integerValue] > 0) {
+        if (value > 0) {
             [cell.textField setStringValue:@"Yes"];
         }
         else
@@ -102,6 +99,7 @@ NSMutableArray* supply;
             [cell.textField setStringValue:@"No"];
         }
     }
+
     
     return cell;
 }

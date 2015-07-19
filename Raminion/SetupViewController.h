@@ -11,6 +11,7 @@
 @interface SetupViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource>
 {
     IBOutlet NSTableView* setup;
+    NSMutableArray* supply;
 }
 
 @property (retain) NSTableView* setup;
