@@ -52,7 +52,7 @@
     
     [cards createCards:s limit:sets];
     
-    for (int h = 0; h < [s count]; h++)
+    for (int h = 0; h < [[cards cards] count]; h++)
     {
         int randValue = arc4random_uniform((uint32_t)[[cards cards] count]);
         [[cards cards] exchangeObjectAtIndex:h withObjectAtIndex:randValue];
