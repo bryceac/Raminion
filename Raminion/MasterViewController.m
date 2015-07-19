@@ -35,8 +35,10 @@ Card *bane;
     cards = [[Cards alloc] initWithSupply:[json supply]];
     rules = [[Rules alloc] init];
     
-    if (limit.stringValue != nil && limit.stringValue.intValue != 0) {
-        [cards shuffle:limit.stringValue.intValue];
+    int max = limit.stringValue.intValue;
+    
+    if (max != 0) {
+        [cards shuffle:max];
     }
     else
     {
