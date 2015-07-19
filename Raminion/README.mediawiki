@@ -1,0 +1,14 @@
+==Raminion==
+
+<span style="font-weight:bold">Version:</span> 0.1
+<span style="font-weight:bold">Author:</span> Bryce
+
+===Description===
+
+This program is a Dominion shuffling app for Mac that allows the user to limit the number of sets used in Dominion.
+
+Right now, the program is incomplete, but it is planned that users will be able to choose what sets to use out of all sets contained in a JSON file.
+
+===License===
+
+While I do not have a license right now, I plan to place it under the MIT License, once set selection is implemented.
