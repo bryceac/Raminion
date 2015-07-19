@@ -19,6 +19,8 @@
 
 - (void)shuffle;
 
+- (void)shuffle:(int)n;
+
 - (NSMutableArray*)cards;
 
 @end

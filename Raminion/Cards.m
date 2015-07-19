@@ -55,6 +55,13 @@
     cards = [shuffle shuffle:cards];
 }
 
+- (void)shuffle:(int)n
+{
+    Shuffle* shuffle = [[Shuffle alloc] init];
+    
+    cards = [shuffle shuffle:cards];
+}
+
 - (NSMutableArray*)cards
 {
     return cards;
