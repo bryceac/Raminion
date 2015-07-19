@@ -51,17 +51,19 @@
         h = [s count];
     }
     
-    for (int i = 0; i < [s count]; i++)
-    {
-        int randValue = arc4random_uniform((uint32_t)[s count]);
-        [s exchangeObjectAtIndex:i withObjectAtIndex:randValue];
-    }
+    NSLog(@"sets: %@", sets);
     
-    for (int j = 0; j < [sets count]; j++)
+    for (int j = 0; j < [s count]; j++)
     {
         if ([s[j] isKindOfClass:[Card class]] && [sets containsObject:[s[j] collection]] == false) {
             [s removeObjectAtIndex:j];
         }
+    }
+    
+    for (int i = 0; i < [s count]; i++)
+    {
+        int randValue = arc4random_uniform((uint32_t)[s count]);
+        [s exchangeObjectAtIndex:i withObjectAtIndex:randValue];
     }
     return s;
 }
