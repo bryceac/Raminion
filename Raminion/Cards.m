@@ -59,7 +59,7 @@
 {
     Shuffle* shuffle = [[Shuffle alloc] init];
     
-    cards = [shuffle shuffle:cards];
+    cards = [shuffle shuffle:cards andSetLimit:n];
 }
 
 - (NSMutableArray*)cards
