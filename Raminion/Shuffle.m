@@ -56,7 +56,9 @@
     
     for (int j = 0; j < [s count]; j++)
     {
-        if ([s[j] isKindOfClass:[Card class]] && [sets containsObject:[s[j] collection]] == false) {
+        NSString* set = [s[j] collection];
+        BOOL contains = [sets containsObject:set];
+        if ([s[j] isKindOfClass:[Card class]] &&  contains == false) {
             [s removeObjectAtIndex:j];
         }
     }
