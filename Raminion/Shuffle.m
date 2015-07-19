@@ -46,12 +46,9 @@
     }
     
     
-        while ([sets count] < n)
-        {
-            for (int i = 0; i < [s count]; i++) {
-                if ([s[i] isKindOfClass:[Card class]]) {
-                    [sets addObject:[s[i] collection]];
-                }
+        for (int i = 0; i < [s count]; i++) {
+            if ([sets count] < n && [s[i] isKindOfClass:[Card class]]) {
+                [sets addObject:[s[i] collection]];
             }
         }
     
