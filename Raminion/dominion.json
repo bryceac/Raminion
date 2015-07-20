@@ -153,7 +153,7 @@
     {"name": "Border Village", "set": "Hinterlands", "cost": 6, "types": ["action"]},
     {"name": "Farmland", "set": "Hinterlands", "cost": 6, "types": ["victory"]},
     {"name": "Poor House", "set": "Dark Ages", "cost": 1, "types": ["action"]},
-    {"name": "Beggar", "set": "Dark Ages", "cost": 2, "types": ["action"], "reaction"},
+    {"name": "Beggar", "set": "Dark Ages", "cost": 2, "types": ["action", "reaction"]},
     {"name": "Squire", "set": "Dark Ages", "cost": 2, "types": ["action"]},
     {"name": "Vagrant", "set": "Dark Ages", "cost": 2, "types": ["action"]},
     {"name": "Forager", "set": "Dark Ages", "cost": 3, "types": ["action"]},
