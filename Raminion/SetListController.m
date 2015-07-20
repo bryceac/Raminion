@@ -22,8 +22,9 @@
 
 - (void)retrieve:(NSArray *)s
 {
-    sets = [[Sets alloc] initWithArray:s];
+    sets = [[Sets alloc] initWithArray:s]; // create sets object
     
+    // populate table
     groups.delegate = self;
     groups.dataSource = self;
     
