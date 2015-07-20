@@ -73,6 +73,8 @@
     Cards* cards = [[Cards alloc] init]; // create Cards object
     NSMutableSet* sets = [[NSMutableSet alloc] initWithArray:c];
     
+    [cards createCards:s sets:sets];
+    
     // perform shuffle
     for (int i = 0; i < [[cards cards] count]; i++)
     {
@@ -87,11 +89,11 @@
     Cards* cards = [[Cards alloc] init];
     NSMutableSet* sets = [[NSMutableSet alloc] initWithCapacity:n]; // create set object that has a specified capacity
     
-    // populate the set
-    for (int i = 0; i < [s count]; i++) {
-        NSDictionary* item = [s objectAtIndex:i];
+    // populate the set with randomly select set from list of chosen sets
+    for (int i = 0; i < [c count]; i++) {
+        int randValue = arc4random_uniform((uint32_t)[c count]);
         if ([sets count] < n) {
-            [sets addObject:[item objectForKey:@"set"]];
+            [sets addObject:c[randValue]];
         }
     }
     
