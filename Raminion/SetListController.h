@@ -7,7 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "Sets.h"
 
-@interface SetListController : NSViewController
+@interface SetListController : NSViewController<NSTableViewDelegate, NSTableViewDataSource>
+{
+    Sets* sets;
+}
 
+@property (retain) Sets* sets;
 @end

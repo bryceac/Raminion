@@ -13,10 +13,31 @@
 @end
 
 @implementation SetListController
+@synthesize sets;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
+    sets = [[Sets alloc] init];
+}
+
+// the following methods work the same as the MasterViewController table, but with data meant for setup
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
+{
+    return [[sets sets] count];
+}
+
+- (NSView*)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+{
+    NSMutableArray* collections = [[NSMutableArray alloc] initWithArray:[[sets sets] allObjects]];
+    NSTableCellView* cell;
+    
+    cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
+    
+    cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
+    
+    [cell.textField setValue:collections[row]];
+    return cell;
 }
 
 @end
