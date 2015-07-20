@@ -23,6 +23,7 @@
 		6CC8E9AB1B5812AF004E0A20 /* Shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC8E9AA1B5812AF004E0A20 /* Shuffle.m */; };
 		6CCFD1DF1B5B006F00EBF86A /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCFD1DD1B5B006F00EBF86A /* SetupViewController.m */; };
 		6CCFD1E01B5B006F00EBF86A /* SetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CCFD1DE1B5B006F00EBF86A /* SetupViewController.xib */; };
+		6CD324E01B5C6FC500A61860 /* Sets.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD324DF1B5C6FC500A61860 /* Sets.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		6CCFD1DC1B5B006F00EBF86A /* SetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupViewController.h; sourceTree = "<group>"; };
 		6CCFD1DD1B5B006F00EBF86A /* SetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupViewController.m; sourceTree = "<group>"; };
 		6CCFD1DE1B5B006F00EBF86A /* SetupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetupViewController.xib; sourceTree = "<group>"; };
+		6CD324DE1B5C6FC500A61860 /* Sets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sets.h; sourceTree = "<group>"; };
+		6CD324DF1B5C6FC500A61860 /* Sets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sets.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 				6CCFD1DD1B5B006F00EBF86A /* SetupViewController.m */,
 				6CCFD1DE1B5B006F00EBF86A /* SetupViewController.xib */,
 				6C7DAF751B5C0EE700ECAE0C /* README.mediawiki */,
+				6CD324DE1B5C6FC500A61860 /* Sets.h */,
+				6CD324DF1B5C6FC500A61860 /* Sets.m */,
 			);
 			path = Raminion;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CD324E01B5C6FC500A61860 /* Sets.m in Sources */,
 				6CC8E9AB1B5812AF004E0A20 /* Shuffle.m in Sources */,
 				6CC8E9A51B58073D004E0A20 /* JSON.m in Sources */,
 				6C87D0941B572F60008C0260 /* main.m in Sources */,
