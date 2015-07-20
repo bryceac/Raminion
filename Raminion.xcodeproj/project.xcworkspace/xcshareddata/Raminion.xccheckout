@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B7EA3862-EB13-406A-950A-48271B11EAAC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Raminion</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5AB14758F51F4B06B5D24ED3356BEF6B4B939814</key>
+		<string>github.com:bryceac/Raminion.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Raminion.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5AB14758F51F4B06B5D24ED3356BEF6B4B939814</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:bryceac/Raminion.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5AB14758F51F4B06B5D24ED3356BEF6B4B939814</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5AB14758F51F4B06B5D24ED3356BEF6B4B939814</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Raminion</string>
+		</dict>
+	</array>
+</dict>
+</plist>
