@@ -13,7 +13,7 @@
 #import "JSON.h"
 
 @implementation MasterViewController
-@synthesize limit, table, setup;
+@synthesize limit, table, sets, setup;
 
 Rules* rules; // variable used to determine what is needed each game
 Card *bane; // variable to hold the bane card, if it is needed
@@ -22,10 +22,14 @@ Card *bane; // variable to hold the bane card, if it is needed
     [super viewDidLoad];
     // Do view setup here.
     
-    // add child view controller
+    // add child view controllers
     setup = [[SetupViewController alloc] initWithNibName:@"SetupViewController" bundle:nil];
     [self addChildViewController:setup];
     [self.view addSubview:setup.view];
+    
+    sets = [[SetListController alloc] initWithNibName:@"ListController" bundle:nil];
+    [self addChildViewController:sets];
+    [self.view addSubview:sets.view];
 }
 
 - (IBAction)shuffle:(id)sender
