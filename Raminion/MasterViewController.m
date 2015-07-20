@@ -42,6 +42,7 @@ JSON* json; // variable that will hold json object
     Shuffle* shuffle = [[Shuffle alloc] init]; // object used for shuffling cards
     rules = [[Rules alloc] init]; // create rules object, so that game needs can be implemented
     NSIndexSet* selected = [sets.groups selectedRowIndexes]; // retrieve selected rows
+    NSAlert* alert = [[NSAlert alloc] init];
     
     // retrieve max number of sets that the user wants to have.
     int max = limit.stringValue.intValue;
@@ -81,10 +82,44 @@ JSON* json; // variable that will hold json object
             index = [selected indexGreaterThanIndex:index];
         }
         
-        cards = [shuffle shuffle:[json supply] sets:chosen];
+        // check if Cornucopia is the only set selected, and if it is send user a message and refuse to shuffle
+        if ([selected count] == 1 && [chosen[0] isEqualToString:@"Cornucopia"]) {
+            [alert setMessageText:@"Error!"];
+            [alert setInformativeText:@"Cornucopia cannot be the only chosen set. Please select either a different set or a companion set."];
+            [alert addButtonWithTitle:@"OK"];
+            [alert runModal];
+        }
+        else
+        {
+            cards = [shuffle shuffle:[json supply] sets:chosen limit:max];
+        }
     }
     else if (max != 0) {
-        cards = [shuffle shuffle:[json supply] limit:max];
+        NSMutableArray* collection = [[NSMutableArray alloc] initWithArray:[[sets.sets sets] array]];
+        
+        NSMutableArray* chosen = [[NSMutableArray alloc] init];
+        
+        NSUInteger index = [selected firstIndex];
+        
+        while (index != NSNotFound)
+        {
+            [chosen addObject:collection[index]];
+            
+            index = [selected indexGreaterThanIndex:index];
+        }
+        
+        // check if Cornucopia is the only set selected, and if it is send user a message and refuse to shuffle
+        if ([selected count] == 1 && [chosen[0] isEqualToString:@"Cornucopia"]) {
+            [alert setMessageText:@"Error!"];
+            [alert setInformativeText:@"Cornucopia cannot be the only chosen set. Please select either a different set or a companion set."];
+            [alert addButtonWithTitle:@"OK"];
+            [alert runModal];
+        }
+        else
+        {
+            cards = [shuffle shuffle:[json supply] sets:chosen];
+        }
+
     }
     else
     {
