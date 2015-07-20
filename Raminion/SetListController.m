@@ -24,7 +24,10 @@
 {
     sets = [[Sets alloc] initWithArray:s];
     
+    groups.delegate = self;
+    groups.dataSource = self;
     
+    [groups reloadData];
 }
 
 // the following methods work the same as the MasterViewController table, but with data meant for setup
