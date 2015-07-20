@@ -10,12 +10,12 @@
 
 @interface Sets : NSObject
 {
-    NSMutableSet* sets; // variable to hold sets
+    NSMutableOrderedSet* sets; // variable to hold sets
 }
 
 - (id) initWithArray:(NSArray*)s; // custom initializer
 
 - (void)createSets:(NSArray*)s; // variable that populate sets variable
 
-- (NSMutableSet*)sets; // accessor method
+- (NSMutableOrderedSet*)sets; // accessor method
 @end

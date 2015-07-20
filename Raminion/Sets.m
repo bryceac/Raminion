@@ -20,7 +20,7 @@
 - (id) initWithArray:(NSArray *)s
 {
     if (self = [super init]) {
-        sets = [[NSMutableSet alloc] init];
+        sets = [[NSMutableOrderedSet alloc] init];
         [self createSets:s];
         
     }
@@ -38,7 +38,7 @@
     }
 }
 
-- (NSMutableSet*)sets
+- (NSMutableOrderedSet*)sets
 {
     return sets;
 }
