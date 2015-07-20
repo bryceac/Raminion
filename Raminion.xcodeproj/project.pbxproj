@@ -64,6 +64,7 @@
 		6CC8E9A71B581135004E0A20 /* Cards.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cards.m; sourceTree = "<group>"; };
 		6CC8E9A91B5812AF004E0A20 /* Shuffle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shuffle.h; sourceTree = "<group>"; };
 		6CC8E9AA1B5812AF004E0A20 /* Shuffle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shuffle.m; sourceTree = "<group>"; };
+		6CCB6E9C1B5CBB44001D1382 /* Raminion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Raminion.entitlements; sourceTree = "<group>"; };
 		6CCFD1DC1B5B006F00EBF86A /* SetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupViewController.h; sourceTree = "<group>"; };
 		6CCFD1DD1B5B006F00EBF86A /* SetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupViewController.m; sourceTree = "<group>"; };
 		6CCFD1DE1B5B006F00EBF86A /* SetupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetupViewController.xib; sourceTree = "<group>"; };
@@ -113,6 +114,7 @@
 		6C87D08D1B572F60008C0260 /* Raminion */ = {
 			isa = PBXGroup;
 			children = (
+				6CCB6E9C1B5CBB44001D1382 /* Raminion.entitlements */,
 				6C87D0901B572F60008C0260 /* AppDelegate.h */,
 				6C87D0911B572F60008C0260 /* AppDelegate.m */,
 				6C87D0951B572F60008C0260 /* Images.xcassets */,
@@ -220,6 +222,12 @@
 				TargetAttributes = {
 					6C87D08A1B572F60008C0260 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 7E4Q9ALK69;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					6C87D09D1B572F60008C0260 = {
 						CreatedOnToolsVersion = 6.4;
@@ -402,6 +410,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Raminion/Raminion.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Raminion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -413,6 +423,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Raminion/Raminion.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Raminion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
