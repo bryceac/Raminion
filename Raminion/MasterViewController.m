@@ -126,13 +126,19 @@ JSON* json; // variable that will hold json object
         cards = [shuffle shuffle:[json supply]];
     }
     
-    // specify table delegate and dataSource
-    table.delegate = self;
-    table.dataSource = self;
-    
-    [table reloadData]; // refresh table so that content will appear
-    
-    [setup required:[rules colony:cards] potion:[rules potion:cards]]; // make sure that setup table is populated
+    if ([cards count] != 0) {
+        // specify table delegate and dataSource
+        table.delegate = self;
+        table.dataSource = self;
+        
+        [table reloadData]; // refresh table so that content will appear
+        
+        [setup required:[rules colony:cards] potion:[rules potion:cards]]; // make sure that setup table is populated
+    }
+    else
+    {
+        
+    }
 }
 
 // numberofRowsInTableView specifies the number of rows that will appear
