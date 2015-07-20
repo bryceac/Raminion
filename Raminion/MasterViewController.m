@@ -33,7 +33,7 @@ JSON* json; // variable that will hold json object
     [self.view addSubview:sets.view];
     
     json = [[JSON alloc] initWithFile:@"dominion"]; // initial json object with the file that contains card info
-    [sets.sets createSets:[json supply]];
+    [sets retrieve:[json supply]];
 }
 
 - (IBAction)shuffle:(id)sender

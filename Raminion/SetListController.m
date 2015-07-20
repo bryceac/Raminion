@@ -45,7 +45,7 @@
     
     cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
     
-    [cell.textField setValue:collections[row]];
+    [cell.textField setStringValue:collections[row]];
     return cell;
 }
 
