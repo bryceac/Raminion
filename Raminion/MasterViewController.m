@@ -41,9 +41,33 @@ JSON* json; // variable that will hold json object
     cards = [[NSMutableArray alloc] init]; // array used to populate main table
     Shuffle* shuffle = [[Shuffle alloc] init]; // object used for shuffling cards
     rules = [[Rules alloc] init]; // create rules object, so that game needs can be implemented
-    NSIndexSet* selected = [sets.groups selectedRowIndexes];
+    NSIndexSet* selected = [sets.groups selectedRowIndexes]; // retrieve selected rows
     
-    if ([selected count] > 0) {
+    // retrieve max number of sets that the user wants to have.
+    int max = limit.stringValue.intValue;
+    
+    // determine if sets and/or a maximum number of sets is specified and perform necessary shuffling
+    if ([selected count] > 0 && max != 0) {
+        // create variable to hold sets
+        NSMutableArray* collection = [[NSMutableArray alloc] initWithArray:[[sets.sets sets] array]];
+        
+        // create array that will hold the sets that the user specified
+        NSMutableArray* chosen = [[NSMutableArray alloc] init];
+        
+        NSUInteger index = [selected firstIndex]; // create index variable that will be used to retrieve data
+        
+        // loop through array and add selected sets until index cannot be found
+        while (index != NSNotFound)
+        {
+            [chosen addObject:collection[index]];
+            
+            index = [selected indexGreaterThanIndex:index];
+        }
+        
+        cards = [shuffle shuffle:[json supply] sets:chosen limit:max]; // shuffle cards with chosen set and maximum
+    }
+    else if ([selected count] > 0)
+    {
         NSMutableArray* collection = [[NSMutableArray alloc] initWithArray:[[sets.sets sets] array]];
         
         NSMutableArray* chosen = [[NSMutableArray alloc] init];
@@ -56,13 +80,10 @@ JSON* json; // variable that will hold json object
             
             index = [selected indexGreaterThanIndex:index];
         }
+        
+        cards = [shuffle shuffle:[json supply] sets:chosen];
     }
-    
-    // retrieve max number of sets that the user wants to have.
-    int max = limit.stringValue.intValue;
-    
-    // if user specified a max amount of sets, shuffle cards only belonging that that specified amount of sets
-    if (max != 0) {
+    else if (max != 0) {
         cards = [shuffle shuffle:[json supply] limit:max];
     }
     else
