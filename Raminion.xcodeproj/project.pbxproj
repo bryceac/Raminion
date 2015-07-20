@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6C5368041B5968970051DA8A /* Rules.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5368031B5968970051DA8A /* Rules.m */; };
-		6C7DAF761B5C0EE700ECAE0C /* README.mediawiki in Resources */ = {isa = PBXBuildFile; fileRef = 6C7DAF751B5C0EE700ECAE0C /* README.mediawiki */; };
 		6C87D0921B572F60008C0260 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C87D0911B572F60008C0260 /* AppDelegate.m */; };
 		6C87D0941B572F60008C0260 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C87D0931B572F60008C0260 /* main.m */; };
 		6C87D0961B572F60008C0260 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C87D0951B572F60008C0260 /* Images.xcassets */; };
@@ -41,7 +40,6 @@
 /* Begin PBXFileReference section */
 		6C5368021B5968970051DA8A /* Rules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rules.h; sourceTree = "<group>"; };
 		6C5368031B5968970051DA8A /* Rules.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rules.m; sourceTree = "<group>"; };
-		6C7DAF751B5C0EE700ECAE0C /* README.mediawiki */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mediawiki; sourceTree = "<group>"; };
 		6C87D08B1B572F60008C0260 /* Raminion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Raminion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C87D08F1B572F60008C0260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C87D0901B572F60008C0260 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 				6CCFD1DC1B5B006F00EBF86A /* SetupViewController.h */,
 				6CCFD1DD1B5B006F00EBF86A /* SetupViewController.m */,
 				6CCFD1DE1B5B006F00EBF86A /* SetupViewController.xib */,
-				6C7DAF751B5C0EE700ECAE0C /* README.mediawiki */,
 				6CD324DE1B5C6FC500A61860 /* Sets.h */,
 				6CD324DF1B5C6FC500A61860 /* Sets.m */,
 				6CD324E11B5C72C900A61860 /* SetListController.h */,
@@ -259,7 +256,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C7DAF761B5C0EE700ECAE0C /* README.mediawiki in Resources */,
 				6CD324E51B5C72C900A61860 /* SetListController.xib in Resources */,
 				6C87D0B41B573000008C0260 /* MasterViewController.xib in Resources */,
 				6CCFD1E01B5B006F00EBF86A /* SetupViewController.xib in Resources */,
