@@ -17,6 +17,7 @@
 
 Rules* rules; // variable used to determine what is needed each game
 Card *bane; // variable to hold the bane card, if it is needed
+JSON* json; // variable that will hold json object
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,13 +31,15 @@ Card *bane; // variable to hold the bane card, if it is needed
     sets = [[SetListController alloc] initWithNibName:@"ListController" bundle:nil];
     [self addChildViewController:sets];
     [self.view addSubview:sets.view];
+    
+    json = [[JSON alloc] initWithFile:@"dominion"]; // initial json object with the file that contains card info
+    [sets.sets createSets:[json supply]];
 }
 
 - (IBAction)shuffle:(id)sender
 {
     cards = [[NSMutableArray alloc] init]; // array used to populate main table
     Shuffle* shuffle = [[Shuffle alloc] init]; // object used for shuffling cards
-    JSON* json = [[JSON alloc] initWithFile:@"dominion"]; // initial json object with the file that contains card info
     rules = [[Rules alloc] init]; // create rules object, so that game needs can be implemented
     
     // retrieve max number of sets that the user wants to have.
