@@ -13,7 +13,7 @@
 @end
 
 @implementation SetListController
-@synthesize sets;
+@synthesize sets, groups;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
