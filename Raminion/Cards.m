@@ -86,7 +86,7 @@
     }
 }
 
-// variant of the shuffle method that will only use certain sets
+// variant of the createCard method that will only use certain sets
 - (void)createCards:(NSArray *)s sets:(NSMutableSet *)c
 {
     Card* card; // declare variable for card objects
@@ -104,8 +104,9 @@
         {
             card = [[Card alloc] initWithName:[item objectForKey:@"name"] collection:[item objectForKey:@"set"] cost:[[item objectForKey:@"cost"] intValue] potion:false types:types];
         }
-        
-        [cards addObject:card]; // add object to array
+        if ([c containsObject:[item objectForKey:@"set"]]) {
+            [cards addObject:card]; // add object to array
+        }
     }
 }
 
