@@ -13,5 +13,8 @@
 
 - (BOOL)colony:(NSMutableArray*)c; // method to determine if Colonies and Platinum are used
 - (BOOL)potion:(NSMutableArray*)c; // method to check if potion is needed
+- (BOOL)ruins:(NSMutableArray*)c; // method to check if ruins are needed
+- (BOOL)shelters:(NSMutableArray*)c; // method to check if shelters are used instead of estates
+- (BOOL)spoils:(NSMutableArray*)c; // method to check if spoils are needed
 - (Card*)bane:(NSMutableArray*)c; // method to determine Bane card
 @end

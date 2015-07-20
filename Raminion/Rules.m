@@ -57,6 +57,65 @@
     return false;
 }
 
+// the following three methods are for setups with Dark Ages and check if ruins, shelters, and/or spoils are present
+- (BOOL)ruins:(NSMutableArray *)c
+{
+    int looter = 0; // variable to hold number of looter cards
+    
+    for (int i = 0; i < 10; i++) {
+        if ([c[i] isKindOfClass:[Card class]] && [[c[i] types] containsObject:@"looter"]) {
+            looter++;
+        }
+    }
+    
+    if (looter >= 1) {
+        return true;
+    }
+    return false;
+}
+
+- (BOOL)shelters:(NSMutableArray *)c
+{
+    int da = 0; // variable that holds number of Dark Ages cards
+    int randValue = arc4random_uniform((uint32_t)[c count]);
+    
+    // go through cards present in game and count the number that belong to the Dark Ages set
+    for (int i = 0; i < 10; i++) {
+        if ([c[i] isKindOfClass:[Card class]] && [[c[i] collection] isEqualToString:@"Dark Ages"]) {
+            da++;
+        }
+    }
+    
+    // if Prosperity cards make up at least half of the supply, put Colony and Platinum in the game
+    if (da == 10) {
+        return true;
+    }
+    else if ([[c[randValue] collection] isEqualToString:@"Dark Ages"])
+    {
+        return true;
+    }
+    return false;
+}
+
+- (BOOL)spoils:(NSMutableArray*)c
+{
+    NSArray* known = [[NSArray alloc] initWithObjects:@"Bandit Camp", @"Marauder", @"Pillage", nil];
+    
+    int s = 0;
+    
+    for (int i = 0; i < 10; i++) {
+        if ([c[i] isKindOfClass:[Card class]] && [known containsObject:[c[i] name]]) {
+            s++;
+        }
+    }
+    
+    if (s >= 1) {
+        return true;
+    }
+    
+    return false;
+}
+
 // bane method checks for a particular card in the initial supply and chooses a card to counter it
 - (Card*)bane:(NSMutableArray *)c
 {

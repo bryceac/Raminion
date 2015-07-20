@@ -163,7 +163,7 @@
     {"name": "Storeroom", "set": "Dark Ages", "cost": 3, "types": ["action"]},
     {"name": "Urchin", "set": "Dark Ages", "cost": 3, "types": ["action", "attack"]},
     {"name": "Armory", "set": "Dark Ages", "cost": 4, "types": ["action", "attack"]},
-    {"name": "Death Cart", "set": "Dark Ages", "cost": 4, "types": ["action"]},
+    {"name": "Death Cart", "set": "Dark Ages", "cost": 4, "types": ["action", "looter"]},
     {"name": "Feodum", "set": "Dark Ages", "cost": 4, "types": ["victory"]},
     {"name": "Fortress", "set": "Dark Ages", "cost": 4, "types": ["action"]},
     {"name": "Ironmonger", "set": "Dark Ages", "cost": 4, "types": ["action"]},
