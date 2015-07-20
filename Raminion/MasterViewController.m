@@ -28,7 +28,7 @@ JSON* json; // variable that will hold json object
     [self addChildViewController:setup];
     [self.view addSubview:setup.view];
     
-    sets = [[SetListController alloc] initWithNibName:@"ListController" bundle:nil];
+    sets = [[SetListController alloc] initWithNibName:@"SetListController" bundle:nil];
     [self addChildViewController:sets];
     [self.view addSubview:sets.view];
     
