@@ -126,6 +126,7 @@ JSON* json; // variable that will hold json object
         cards = [shuffle shuffle:[json supply]];
     }
     
+    // make sure table only refreshes if the are cards to display.
     if ([cards count] != 0) {
         // specify table delegate and dataSource
         table.delegate = self;
