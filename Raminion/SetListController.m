@@ -18,7 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
-    sets = [[Sets alloc] init];
+}
+
+- (void)retrieve:(NSArray *)s
+{
+    sets = [[Sets alloc] initWithArray:s];
+    
+    
 }
 
 // the following methods work the same as the MasterViewController table, but with data meant for setup

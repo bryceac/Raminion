@@ -12,7 +12,11 @@
 @interface SetListController : NSViewController<NSTableViewDelegate, NSTableViewDataSource>
 {
     Sets* sets;
+    IBOutlet NSTableView* groups;
 }
 
+- (void)retrieve:(NSArray*)s; // method to retrieve arrays
+
 @property (retain) Sets* sets;
+@property (retain) NSTableView* groups;
 @end
