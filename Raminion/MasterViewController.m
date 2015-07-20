@@ -134,7 +134,7 @@ JSON* json; // variable that will hold json object
         
         [table reloadData]; // refresh table so that content will appear
         
-        [setup required:[rules colony:cards] potion:[rules potion:cards]]; // make sure that setup table is populated
+        [setup required:[rules colony:cards] potion:[rules potion:cards] ruins:[rules ruins:cards] shelter:[rules shelters:cards] spoils:[rules spoils:cards]]; // make sure that setup table is populated
     }
     else
     {

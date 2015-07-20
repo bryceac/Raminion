@@ -16,5 +16,5 @@
 
 @property (retain) NSTableView* setup; // allow setup table to be synthesizable
 
-- (void)required:(BOOL)c potion:(BOOL)p; // method to populate table with required cards
+- (void)required:(BOOL)c potion:(BOOL)p ruins:(BOOL)r shelter:(BOOL)s spoils:(BOOL)t; // method to populate table with required cards
 @end

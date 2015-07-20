@@ -21,7 +21,7 @@
 }
 
 // the required method determines cards needed. Boolean variables are passed to make that determination
-- (void)required:(BOOL)c potion:(BOOL)p
+- (void)required:(BOOL)c potion:(BOOL)p ruins:(BOOL)r shelter:(BOOL)s spoils:(BOOL)t
 {
     supply = [[NSMutableArray alloc] init]; // initialize array, in order to use it
     
@@ -49,6 +49,45 @@
     {
         NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
         [item setObject:[NSNumber numberWithInt:0] forKey:@"Potion"];
+        [supply addObject:item];
+    }
+    
+    if (r == true)
+    {
+        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
+        [item setObject:[NSNumber numberWithInt:1] forKey:@"Ruins"];
+        [supply addObject:item];
+    }
+    else
+    {
+        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
+        [item setObject:[NSNumber numberWithInt:0] forKey:@"Ruins"];
+        [supply addObject:item];
+    }
+    
+    if (s == true)
+    {
+        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
+        [item setObject:[NSNumber numberWithInt:1] forKey:@"Shelters"];
+        [supply addObject:item];
+    }
+    else
+    {
+        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
+        [item setObject:[NSNumber numberWithInt:0] forKey:@"Shelters"];
+        [supply addObject:item];
+    }
+    
+    if (t == true)
+    {
+        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
+        [item setObject:[NSNumber numberWithInt:1] forKey:@"Spoils"];
+        [supply addObject:item];
+    }
+    else
+    {
+        NSMutableDictionary *item = [[NSMutableDictionary alloc] init];
+        [item setObject:[NSNumber numberWithInt:0] forKey:@"Spoils"];
         [supply addObject:item];
     }
     
