@@ -123,7 +123,7 @@ JSON* json; // variable that will hold json object
     }
     else
     {
-        cards = [shuffle shuffle:[json supply]];
+        
     }
     
     // make sure table only refreshes if the are cards to display.
@@ -138,7 +138,10 @@ JSON* json; // variable that will hold json object
     }
     else
     {
-        
+        [alert setMessageText:@"No Cards!"];
+        [alert setInformativeText:@"No set(s) were chosen. Please choose at least one set to use for shuffling."];
+        [alert addButtonWithTitle:@"OK"];
+        [alert runModal];
     }
 }
 
