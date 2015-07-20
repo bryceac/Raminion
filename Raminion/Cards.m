@@ -62,7 +62,7 @@
     }
 }
 
-// variant of createCards array that will only populate the array with cards from certain sets
+// variant of createCards array that will only populate the array with cards from certain number of sets
 - (void)createCards:(NSArray *)s limit:(NSMutableSet*)l
 {
     Card* card;
@@ -83,6 +83,29 @@
         if ([l containsObject:[card collection]]) {
             [cards addObject:card];
         }
+    }
+}
+
+// variant of the shuffle method that will only use certain sets
+- (void)createCards:(NSArray *)s sets:(NSMutableSet *)c
+{
+    Card* card; // declare variable for card objects
+    
+    for (int i = 0; i < [s count]; i++)
+    {
+        NSDictionary* item = [s objectAtIndex:i]; // get Dictionary value of current array element
+        NSArray* types = [item objectForKey:@"types"]; // get the types array from Dictionary
+        
+        // check if card is a potion card and mark it true or false, depending on results.
+        if ([types containsObject:@"potion"]) {
+            card = [[Card alloc] initWithName:[item objectForKey:@"name"] collection:[item objectForKey:@"set"] cost:[[item objectForKey:@"cost"] intValue] potion:true types:types];
+        }
+        else
+        {
+            card = [[Card alloc] initWithName:[item objectForKey:@"name"] collection:[item objectForKey:@"set"] cost:[[item objectForKey:@"cost"] intValue] potion:false types:types];
+        }
+        
+        [cards addObject:card]; // add object to array
     }
 }
 

@@ -23,6 +23,8 @@
 
 - (void)createCards:(NSArray*)s limit:(NSMutableSet*)l;
 
+- (void)createCards:(NSArray*)s sets:(NSMutableSet*)c;
+
 - (NSMutableArray*)cards;
 
 @end

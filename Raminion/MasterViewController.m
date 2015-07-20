@@ -41,6 +41,7 @@ JSON* json; // variable that will hold json object
     cards = [[NSMutableArray alloc] init]; // array used to populate main table
     Shuffle* shuffle = [[Shuffle alloc] init]; // object used for shuffling cards
     rules = [[Rules alloc] init]; // create rules object, so that game needs can be implemented
+     NSMutableArray* selected = [sets.groups selectedRowIndexes];
     
     // retrieve max number of sets that the user wants to have.
     int max = limit.stringValue.intValue;

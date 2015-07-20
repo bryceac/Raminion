@@ -67,4 +67,43 @@
     return [cards cards];
 }
 
+// the following are similar to the previous shuffle methods, but allow sets specification
+- (NSMutableArray*)shuffle:(NSArray*)s sets:(NSMutableArray *)c
+{
+    Cards* cards = [[Cards alloc] init]; // create Cards object
+    NSMutableSet* sets = [[NSMutableSet alloc] initWithArray:c];
+    
+    // perform shuffle
+    for (int i = 0; i < [[cards cards] count]; i++)
+    {
+        int randValue = arc4random_uniform((uint32_t)[[cards cards] count]);
+        [[cards cards] exchangeObjectAtIndex:i withObjectAtIndex:randValue];
+    }
+    return [cards cards];
+}
+
+- (NSMutableArray*)shuffle:(NSArray*)s sets:(NSMutableArray *)c limit:(int)n
+{
+    Cards* cards = [[Cards alloc] init];
+    NSMutableSet* sets = [[NSMutableSet alloc] initWithCapacity:n]; // create set object that has a specified capacity
+    
+    // populate the set
+    for (int i = 0; i < [s count]; i++) {
+        NSDictionary* item = [s objectAtIndex:i];
+        if ([sets count] < n) {
+            [sets addObject:[item objectForKey:@"set"]];
+        }
+    }
+    
+    [cards createCards:s limit:sets]; // create supply based on the set
+    
+    for (int h = 0; h < [[cards cards] count]; h++)
+    {
+        int randValue = arc4random_uniform((uint32_t)[[cards cards] count]);
+        [[cards cards] exchangeObjectAtIndex:h withObjectAtIndex:randValue];
+    }
+    
+    return [cards cards];
+}
+
 @end
