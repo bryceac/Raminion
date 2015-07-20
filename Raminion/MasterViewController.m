@@ -91,7 +91,7 @@ JSON* json; // variable that will hold json object
         }
         else
         {
-            cards = [shuffle shuffle:[json supply] sets:chosen limit:max];
+            cards = [shuffle shuffle:[json supply] sets:chosen];
         }
     }
     else if (max != 0) {
@@ -117,7 +117,7 @@ JSON* json; // variable that will hold json object
         }
         else
         {
-            cards = [shuffle shuffle:[json supply] sets:chosen];
+            cards = [shuffle shuffle:[json supply] limit:max];
         }
 
     }
