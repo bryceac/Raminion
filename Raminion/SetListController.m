@@ -38,7 +38,7 @@
 
 - (NSView*)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    NSMutableArray* collections = [[NSMutableArray alloc] initWithArray:[[sets sets] allObjects]];
+    NSMutableArray* collections = [[NSMutableArray alloc] initWithArray:[[sets sets] array]];
     NSTableCellView* cell;
     
     cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
