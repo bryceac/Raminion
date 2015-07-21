@@ -13,7 +13,7 @@ Currently, this shuffling program supports all cards in existence, as of July, 2
 
 ===License===
 
-This project is licensed under the <a href="http://opensource.org/licenses/MIT">The MIT license</a>
+This project is licensed under the <a href="http://opensource.org/licenses/MIT">MIT license</a>
 
 ===Support===
 
