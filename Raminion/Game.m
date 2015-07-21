@@ -26,9 +26,9 @@
     // if there is a Bane, make sure it is the 11th item and that there are 11 rows, otherwise return only ten rows
     if (b != nil)
     {
-        while (supply < 11)
+        for (int i = 0; [c count]; i++)
         {
-            for (int i = 0; [c count]; i++)
+            while (supply < 11)
             {
                 if ([c[i] event] == true && events < 2) {
                     events++;
@@ -70,9 +70,9 @@
     }
     else
     {
-        while (supply < 10)
+        for (int i = 0; [c count]; i++)
         {
-            for (int i = 0; [c count]; i++)
+            while (supply < 10)
             {
                 if ([c[i] event] == true && events < 2) {
                     events++;
