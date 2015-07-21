@@ -7,6 +7,10 @@
 
 This program is a Dominion shuffling app for Mac that allows the user to limit the number of sets used in Dominion, even selected what sets.
 
+===Cards Supported===
+
+Currently, this shuffling program supports all cards in existence, as of July, 21, 2015, except for any promo cards.
+
 ===License===
 
 This project is licensed under the <a href="http://opensource.org/licenses/MIT">The MIT license</a>
