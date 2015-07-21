@@ -176,7 +176,6 @@ JSON* json; // variable that will hold json object
         }
         
         supply = supply + events;
-        NSLog(@"supply: %d", supply);
         
         if (supply == 13)
         {
