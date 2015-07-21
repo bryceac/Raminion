@@ -149,15 +149,93 @@ JSON* json; // variable that will hold json object
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
     bane = [rules bane:cards]; // retrieve Bane card
+    int supply = 0;
+    int events = 0;
+    NSMutableArray* eventCards = [[NSMutableArray alloc] init];
     
     // if there is a Bane, make sure it is the 11th item and that there are 11 rows, otherwise return only ten rows
     if (bane != nil)
     {
-        int index = [cards indexOfObject:bane];
-        [cards exchangeObjectAtIndex:index withObjectAtIndex:10];
-        return 11;
+        while (supply < 11)
+        {
+            for (int i = 0; [cards count]; i++)
+            {
+                if ([cards[i] event] == true && events < 2) {
+                    events++;
+                    [eventCards addObject:cards[i]];
+                }
+                else if ([cards[i] event] == true)
+                {
+                    
+                }
+                else
+                {
+                    supply++;
+                }
+            }
+        }
+        
+        supply = supply + events;
+        NSLog(@"supply: %d", supply);
+        
+        if (supply == 13)
+        {
+            int index = [cards indexOfObject:bane];
+            [cards exchangeObjectAtIndex:index withObjectAtIndex:supply-1];
+            
+            [cards exchangeObjectAtIndex:[eventCards indexOfObject:eventCards[0]] withObjectAtIndex:supply-2];
+            [cards exchangeObjectAtIndex:[eventCards indexOfObject:eventCards[1]] withObjectAtIndex:supply-3];
+        }
+        else if (supply == 12)
+        {
+            int index = [cards indexOfObject:bane];
+            [cards exchangeObjectAtIndex:index withObjectAtIndex:supply-1];
+            
+            [cards exchangeObjectAtIndex:[eventCards indexOfObject:eventCards[0]] withObjectAtIndex:supply-2];
+        }
+        else
+        {
+            int index = [cards indexOfObject:bane];
+            [cards exchangeObjectAtIndex:index withObjectAtIndex:supply-1];
+        }
     }
-    return 10;
+    else
+    {
+        while (supply < 10)
+        {
+            for (int i = 0; [cards count]; i++)
+            {
+                if ([cards[i] event] == true && events < 2) {
+                    events++;
+                    [eventCards addObject:cards[i]];
+                }
+                else if ([cards[i] event] == true)
+                {
+                    
+                }
+                else
+                {
+                    supply++;
+                }
+            }
+        }
+        
+        supply = supply + events;
+        
+        if (supply == 12)
+        {
+            [cards exchangeObjectAtIndex:[eventCards indexOfObject:eventCards[0]] withObjectAtIndex:supply-1];
+            [cards exchangeObjectAtIndex:[eventCards indexOfObject:eventCards[1]] withObjectAtIndex:supply-2];
+        }
+        else if (supply == 11)
+        {
+            [cards exchangeObjectAtIndex:[eventCards indexOfObject:eventCards[0]] withObjectAtIndex:supply-1];
+        }
+        else
+        {
+        }
+    }
+    return supply;
 }
 
 // the following method is needed to populate an NSTableView
