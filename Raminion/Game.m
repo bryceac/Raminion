@@ -15,6 +15,7 @@
     {
         eventCards = [[NSMutableArray alloc] init];
     }
+    return self;
 }
 
 - (int) supply:(NSMutableArray*)c bane:(Card *)b
