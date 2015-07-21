@@ -138,7 +138,7 @@
             int randValue = arc4random_uniform((uint32_t)[c count]);
             
             // look for card that does not require a potion, has a cost between 2 & 3, and is not already in game
-            if ([c[randValue] isKindOfClass:[Card class]] && [c[randValue] cost] > 1 && [c[randValue] cost] <= 3 && [c[randValue] potion] != true && randValue > 9 && randValue < [c count])
+            if ([c[randValue] isKindOfClass:[Card class]] && [c[randValue] cost] > 1 && [c[randValue] cost] <= 3 && [c[randValue] potion] != true && [c[randValue] event] != true && randValue > 9 && randValue < [c count])
             {
                 bane = c[randValue]; // assign card to bane variable
                 j = [c count]; // stop the loop, as it is no longer needed

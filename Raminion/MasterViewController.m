@@ -11,6 +11,7 @@
 #import "Rules.h"
 #import "Shuffle.h"
 #import "JSON.h"
+#import "Game.h"
 
 @implementation MasterViewController
 @synthesize limit, table, sets, setup;
@@ -149,15 +150,9 @@ JSON* json; // variable that will hold json object
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
     bane = [rules bane:cards]; // retrieve Bane card
+    Game* supply = [[Game alloc] init];
     
-    // if there is a Bane, make sure it is the 11th item and that there are 11 rows, otherwise return only ten rows
-    if (bane != nil)
-    {
-        int index = [cards indexOfObject:bane];
-        [cards exchangeObjectAtIndex:index withObjectAtIndex:10];
-        return 11;
-    }
-    return 10;
+    return [supply supply:cards bane:bane];
 }
 
 // the following method is needed to populate an NSTableView

@@ -13,17 +13,18 @@
 // default initializer that is used to create empty object
 - (id) init
 {
-    return [self initWithName:nil collection:nil cost:0 potion:false types:nil];
+    return [self initWithName:nil collection:nil cost:0 potion:false event:false types:nil];
 }
 
 // method to create object with data to prepopulate it
-- (id) initWithName:(NSString*)n collection:(NSString*)c cost:(int)f potion:(BOOL)b types:(NSArray*)k
+- (id) initWithName:(NSString*)n collection:(NSString*)c cost:(int)f potion:(BOOL)b event:(BOOL)e types:(NSArray*)k
 {
     if (self = [super init]) {
         [self setName:n];
         [self setCollection:c];
         [self setCost:f];
         [self setPotion:b];
+        [self setEvent:e];
         [self setTypes:k];
     }
     return self;
@@ -68,6 +69,16 @@
 - (BOOL)potion
 {
     return potion;
+}
+
+- (void)setEvent:(BOOL)e
+{
+    event = e;
+}
+
+- (BOOL)event
+{
+    return event;
 }
 
 - (void)setCost:(int)c

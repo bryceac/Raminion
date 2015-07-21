@@ -49,13 +49,17 @@
         NSDictionary* item = [s objectAtIndex:i]; // get Dictionary value of current array element
         NSArray* types = [item objectForKey:@"types"]; // get the types array from Dictionary
         
-        // check if card is a potion card and mark it true or false, depending on results.
+        // check if card is a potion card or event and mark it true or false, depending on results.
         if ([types containsObject:@"potion"]) {
-            card = [[Card alloc] initWithName:[item objectForKey:@"name"] collection:[item objectForKey:@"set"] cost:[[item objectForKey:@"cost"] intValue] potion:true types:types];
+            card = [[Card alloc] initWithName:[item objectForKey:@"name"] collection:[item objectForKey:@"set"] cost:[[item objectForKey:@"cost"] intValue] potion:true event:false types:types];
+        }
+        else if ([types containsObject:@"event"])
+        {
+            card = [[Card alloc] initWithName:[item objectForKey:@"name"] collection:[item objectForKey:@"set"] cost:[[item objectForKey:@"cost"] intValue] potion:false event:true types:types];
         }
         else
         {
-            card = [[Card alloc] initWithName:[item objectForKey:@"name"] collection:[item objectForKey:@"set"] cost:[[item objectForKey:@"cost"] intValue] potion:false types:types];
+            card = [[Card alloc] initWithName:[item objectForKey:@"name"] collection:[item objectForKey:@"set"] cost:[[item objectForKey:@"cost"] intValue] potion:false event:false types:types];
         }
         
         [cards addObject:card]; // add object to array
@@ -71,12 +75,17 @@
         NSDictionary* item = [s objectAtIndex:i];
         NSArray* types = [item objectForKey:@"types"];
         
+        // check if card is a potion card or event and mark it true or false, depending on results.
         if ([types containsObject:@"potion"]) {
-            card = [[Card alloc] initWithName:[item objectForKey:@"name"] collection:[item objectForKey:@"set"] cost:[[item objectForKey:@"cost"] intValue] potion:true types:types];
+            card = [[Card alloc] initWithName:[item objectForKey:@"name"] collection:[item objectForKey:@"set"] cost:[[item objectForKey:@"cost"] intValue] potion:true event:false types:types];
+        }
+        else if ([types containsObject:@"event"])
+        {
+            card = [[Card alloc] initWithName:[item objectForKey:@"name"] collection:[item objectForKey:@"set"] cost:[[item objectForKey:@"cost"] intValue] potion:false event:true types:types];
         }
         else
         {
-            card = [[Card alloc] initWithName:[item objectForKey:@"name"] collection:[item objectForKey:@"set"] cost:[[item objectForKey:@"cost"] intValue] potion:false types:types];
+            card = [[Card alloc] initWithName:[item objectForKey:@"name"] collection:[item objectForKey:@"set"] cost:[[item objectForKey:@"cost"] intValue] potion:false event:false types:types];
         }
         
         // check if card belongs to one of the chosen sets, and if so, add it to the array
@@ -96,14 +105,19 @@
         NSDictionary* item = [s objectAtIndex:i]; // get Dictionary value of current array element
         NSArray* types = [item objectForKey:@"types"]; // get the types array from Dictionary
         
-        // check if card is a potion card and mark it true or false, depending on results.
+        // check if card is a potion card or event and mark it true or false, depending on results.
         if ([types containsObject:@"potion"]) {
-            card = [[Card alloc] initWithName:[item objectForKey:@"name"] collection:[item objectForKey:@"set"] cost:[[item objectForKey:@"cost"] intValue] potion:true types:types];
+            card = [[Card alloc] initWithName:[item objectForKey:@"name"] collection:[item objectForKey:@"set"] cost:[[item objectForKey:@"cost"] intValue] potion:true event:false types:types];
+        }
+        else if ([types containsObject:@"event"])
+        {
+            card = [[Card alloc] initWithName:[item objectForKey:@"name"] collection:[item objectForKey:@"set"] cost:[[item objectForKey:@"cost"] intValue] potion:false event:true types:types];
         }
         else
         {
-            card = [[Card alloc] initWithName:[item objectForKey:@"name"] collection:[item objectForKey:@"set"] cost:[[item objectForKey:@"cost"] intValue] potion:false types:types];
+            card = [[Card alloc] initWithName:[item objectForKey:@"name"] collection:[item objectForKey:@"set"] cost:[[item objectForKey:@"cost"] intValue] potion:false event:false types:types];
         }
+        
         if ([c containsObject:[item objectForKey:@"set"]]) {
             [cards addObject:card]; // add object to array
         }
