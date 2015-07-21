@@ -20,17 +20,17 @@
 
 - (int) supply:(NSMutableArray*)c bane:(Card *)b
 {
-    int supply = 0;
-    int events = 0;
+    int supply = 0; // variable to determine supply
+    int events = 0; // variable to count number of events encountered
     
-    // if there is a Bane, make sure it is the 11th item and that there are 11 rows, otherwise return only ten rows
-    if (b != nil)
-    {
-        for (int i = 0; [c count]; i++)
+    // check for bane card, in order to determine decks in supply
+    if (b != nil) {
+        while (supply < 11)
         {
-            while (supply < 11)
+            for (int i = 0; i < [c count]; i++)
             {
-                if ([c[i] event] == true && events < 2) {
+                if ([c[i] event] == true && events < 2)
+                {
                     events++;
                     [eventCards addObject:c[i]];
                 }
@@ -52,15 +52,16 @@
             int index = [c indexOfObject:b];
             [c exchangeObjectAtIndex:index withObjectAtIndex:supply-1];
             
-            [c exchangeObjectAtIndex:[eventCards indexOfObject:eventCards[0]] withObjectAtIndex:supply-2];
-            [c exchangeObjectAtIndex:[eventCards indexOfObject:eventCards[1]] withObjectAtIndex:supply-3];
+            [c exchangeObjectAtIndex:[c indexOfObject:eventCards[0]] withObjectAtIndex:supply-2];
+            [c exchangeObjectAtIndex:[c indexOfObject:eventCards[1]] withObjectAtIndex:supply-3];
+            
         }
         else if (supply == 12)
         {
             int index = [c indexOfObject:b];
             [c exchangeObjectAtIndex:index withObjectAtIndex:supply-1];
             
-            [c exchangeObjectAtIndex:[eventCards indexOfObject:eventCards[0]] withObjectAtIndex:supply-2];
+            [c exchangeObjectAtIndex:[c indexOfObject:eventCards[0]] withObjectAtIndex:supply-2];
         }
         else
         {
@@ -70,11 +71,12 @@
     }
     else
     {
-        for (int i = 0; [c count]; i++)
+        while (supply < 10)
         {
-            while (supply < 10)
+            for (int i = 0; i < [c count]; i++)
             {
-                if ([c[i] event] == true && events < 2) {
+                if ([c[i] event] == true && events < 2)
+                {
                     events++;
                     [eventCards addObject:c[i]];
                 }
@@ -93,15 +95,24 @@
         
         if (supply == 12)
         {
-            [c exchangeObjectAtIndex:[eventCards indexOfObject:eventCards[0]] withObjectAtIndex:supply-1];
-            [c exchangeObjectAtIndex:[eventCards indexOfObject:eventCards[1]] withObjectAtIndex:supply-2];
+            int index = [c indexOfObject:b];
+            [c exchangeObjectAtIndex:index withObjectAtIndex:supply-1];
+            
+            [c exchangeObjectAtIndex:[c indexOfObject:eventCards[0]] withObjectAtIndex:supply-2];
+            [c exchangeObjectAtIndex:[c indexOfObject:eventCards[1]] withObjectAtIndex:supply-3];
+            
         }
         else if (supply == 11)
         {
-            [c exchangeObjectAtIndex:[eventCards indexOfObject:eventCards[0]] withObjectAtIndex:supply-1];
+            int index = [c indexOfObject:b];
+            [c exchangeObjectAtIndex:index withObjectAtIndex:supply-1];
+            
+            [c exchangeObjectAtIndex:[c indexOfObject:eventCards[0]] withObjectAtIndex:supply-2];
         }
         else
         {
+            int index = [c indexOfObject:b];
+            [c exchangeObjectAtIndex:index withObjectAtIndex:supply-1];
         }
     }
     return supply;
