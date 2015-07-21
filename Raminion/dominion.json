@@ -199,7 +199,7 @@
     {"name": "Butcher", "set": "Guilds", "cost": 5, "types": ["action"]},
     {"name": "Journeyman", "set": "Guilds", "cost": 5, "types": ["action"]},
     {"name": "Merchant Guild", "set": "Guilds", "cost": 5, "types": ["action"]},
-    {"name": "Soothsayer", "set": "Guilds", "cost": 5, "types": ["action", "attack"]},
+    {"name": "Soothsayer", "set": "Guilds", "cost": 5, "types": ["action", "attack"]}
 
 
 ]
