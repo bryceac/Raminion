@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Card.h"
 @interface Game : NSObject
+{
+    NSMutableArray* eventCards;
+}
 - (int)supply:(NSMutableArray*)c bane:(Card*)b; //method to get necessary number of rows.
 @end

@@ -9,11 +9,18 @@
 #import "Game.h"
 
 @implementation Game
+- (id)init
+{
+    if (self = [super init])
+    {
+        eventCards = [[NSMutableArray alloc] init];
+    }
+}
+
 - (int) supply:(NSMutableArray*)c bane:(Card *)b
 {
     int supply = 0;
     int events = 0;
-    NSMutableArray* eventCards = [[NSMutableArray alloc] init];
     
     // if there is a Bane, make sure it is the 11th item and that there are 11 rows, otherwise return only ten rows
     if (b != nil)
