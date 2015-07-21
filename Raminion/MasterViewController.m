@@ -152,11 +152,7 @@ JSON* json; // variable that will hold json object
     bane = [rules bane:cards]; // retrieve Bane card
     Game* supply = [[Game alloc] init];
     
-    int num = [supply supply:cards bane:bane];
-    
-    NSLog(@"supply: %d", num);
-    
-    return num;
+    return [supply supply:cards bane:bane];
 }
 
 // the following method is needed to populate an NSTableView
