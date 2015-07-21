@@ -50,23 +50,23 @@
         if (supply == 13)
         {
             int index = [c indexOfObject:b];
-            [c exchangeObjectAtIndex:index withObjectAtIndex:supply-1];
+            [c exchangeObjectAtIndex:index withObjectAtIndex:12];
             
-            [c exchangeObjectAtIndex:[c indexOfObject:eventCards[0]] withObjectAtIndex:supply-2];
-            [c exchangeObjectAtIndex:[c indexOfObject:eventCards[1]] withObjectAtIndex:supply-3];
+            [c exchangeObjectAtIndex:[c indexOfObject:eventCards[0]] withObjectAtIndex:11];
+            [c exchangeObjectAtIndex:[c indexOfObject:eventCards[1]] withObjectAtIndex:10];
             
         }
         else if (supply == 12)
         {
             int index = [c indexOfObject:b];
-            [c exchangeObjectAtIndex:index withObjectAtIndex:supply-1];
+            [c exchangeObjectAtIndex:index withObjectAtIndex:11];
             
-            [c exchangeObjectAtIndex:[c indexOfObject:eventCards[0]] withObjectAtIndex:supply-2];
+            [c exchangeObjectAtIndex:[c indexOfObject:eventCards[0]] withObjectAtIndex:10];
         }
         else
         {
             int index = [c indexOfObject:b];
-            [c exchangeObjectAtIndex:index withObjectAtIndex:supply-1];
+            [c exchangeObjectAtIndex:index withObjectAtIndex:10];
         }
     }
     else
@@ -95,24 +95,17 @@
         
         if (supply == 12)
         {
-            int index = [c indexOfObject:b];
-            [c exchangeObjectAtIndex:index withObjectAtIndex:supply-1];
-            
-            [c exchangeObjectAtIndex:[c indexOfObject:eventCards[0]] withObjectAtIndex:supply-2];
-            [c exchangeObjectAtIndex:[c indexOfObject:eventCards[1]] withObjectAtIndex:supply-3];
+            [c exchangeObjectAtIndex:[c indexOfObject:eventCards[0]] withObjectAtIndex:11];
+            [c exchangeObjectAtIndex:[c indexOfObject:eventCards[1]] withObjectAtIndex:10];
             
         }
         else if (supply == 11)
         {
-            int index = [c indexOfObject:b];
-            [c exchangeObjectAtIndex:index withObjectAtIndex:supply-1];
             
-            [c exchangeObjectAtIndex:[c indexOfObject:eventCards[0]] withObjectAtIndex:supply-2];
+            [c exchangeObjectAtIndex:[c indexOfObject:eventCards[0]] withObjectAtIndex:10];
         }
         else
         {
-            int index = [c indexOfObject:b];
-            [c exchangeObjectAtIndex:index withObjectAtIndex:supply-1];
         }
     }
     return supply;
