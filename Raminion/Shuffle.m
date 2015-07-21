@@ -15,11 +15,11 @@
 // default initializer
 - (id) init
 {
-    return [self initWithArray:nil];
+    return [self initWithSupply:nil];
 }
 
 // main initializer
-- (id) initWithArray:(NSMutableArray*)a
+- (id) initWithSupply:(NSMutableArray*)a
 {
     if (self = [super init])
     {
