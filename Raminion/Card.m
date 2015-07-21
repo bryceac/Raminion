@@ -13,7 +13,7 @@
 // default initializer that is used to create empty object
 - (id) init
 {
-    return [self initWithName:nil collection:nil cost:0 potion:false event:nil types:nil];
+    return [self initWithName:nil collection:nil cost:0 potion:false event:false types:nil];
 }
 
 // method to create object with data to prepopulate it
