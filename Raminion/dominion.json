@@ -186,7 +186,21 @@
     {"name": "Rebuild", "set": "Dark Ages", "cost": 5, "types": ["action"]},
     {"name": "Rogue", "set": "Dark Ages", "cost": 5, "types": ["action", "attack"]},
     {"name": "Altar", "set": "Dark Ages", "cost": 6, "types": ["action"]},
-    {"name": "Hunting Grounds", "set": "Dark Ages", "cost": 6, "types": ["action"]}
+    {"name": "Hunting Grounds", "set": "Dark Ages", "cost": 6, "types": ["action"]},
+    {"name": "Candlestick Maker", "set": "Guilds", "cost": 2, "types": ["action"]},
+    {"name": "Stonemason", "set": "Guilds", "cost": 2, "types": ["action"]},
+    {"name": "Doctor", "set": "Guilds", "cost": 3, "types": ["action"]},
+    {"name": "Masterpiece", "set": "Guilds", "cost": 3, "types": ["treasure"]},
+    {"name": "Advisor", "set": "Guilds", "cost": 4, "types": ["action"]},
+    {"name": "Herald", "set": "Guilds", "cost": 4, "types": ["action"]},
+    {"name": "Plaza", "set": "Guilds", "cost": 4, "types": ["action"]},
+    {"name": "Taxman", "set": "Guilds", "cost": 4, "types": ["action", "attack"]},
+    {"name": "Baker", "set": "Guilds", "cost": 5, "types": ["action"]},
+    {"name": "Butcher", "set": "Guilds", "cost": 5, "types": ["action"]},
+    {"name": "Journeyman", "set": "Guilds", "cost": 5, "types": ["action"]},
+    {"name": "Merchant Guild", "set": "Guilds", "cost": 5, "types": ["action"]},
+    {"name": "Soothsayer", "set": "Guilds", "cost": 5, "types": ["action", "attack"]},
+
 
 ]
 }
