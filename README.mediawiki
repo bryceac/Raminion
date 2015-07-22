@@ -20,3 +20,11 @@ This project is licensed under the <a href="http://opensource.org/licenses/MIT">
 If you need help or are experiencing problems, please send details to the following address
 
 mac@brycecampbell.me
+
+
+====Known Issues====
+
+The following are known issues that I have been trying to resolve by various means, and may take time to resolve
+<ul>
+<li>More than two Event cards appear and/or two events cards are always chosen with Adventures selected (this causes supply to always have 12 or 13 cards, which should only occur if event cards are present).</li>
+</ul>
