@@ -25,7 +25,7 @@
     
     // check for bane card, in order to determine decks in supply
     if (b != nil) {
-        for (int h = 0; h < 11; h++) {
+        while (supply < 11) {
             for (int i = 0; i < [c count]; i++)
             {
                 if ([c[i] event] == true && events < 2)
@@ -39,7 +39,7 @@
                 }
                 else
                 {
-                    supply = h+1;
+                    supply++;
                 }
             }
         }
@@ -70,7 +70,7 @@
     }
     else
     {
-        for (int h = 0; h < 10; h++) {
+        while (supply < 10) {
             for (int i = 0; i < [c count]; i++)
             {
                 if ([c[i] event] == true && events < 2)
@@ -84,7 +84,7 @@
                 }
                 else
                 {
-                    supply = h+1;
+                    supply++;
                 }
             }
         }
