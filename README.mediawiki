@@ -26,5 +26,5 @@ mac@brycecampbell.me
 
 The following are known issues that I have been trying to resolve by various means, and may take time to resolve
 <ul>
-<li>More than two Event cards appear and/or two events cards are always chosen with Adventures selected (this causes supply to always have 12 or 13 cards, which should only occur if event cards are present).</li>
+<li>Two events cards are always chosen with Adventures selected (this causes supply to always have 12 or 13 cards, which should only occur if event cards are present).</li>
 </ul>
