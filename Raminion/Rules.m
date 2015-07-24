@@ -164,9 +164,14 @@
     
     if (randValue1 == 1)
     {
+        events = true;
+    }
+    
+    if (events == true) {
         int randValue2 = arc4random_uniform(2);
         return randValue2;
     }
+    
     return 0;
 }
 @end
