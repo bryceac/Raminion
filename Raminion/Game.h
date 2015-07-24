@@ -11,6 +11,8 @@
 @interface Game : NSObject
 {
     NSMutableArray* eventCards;
+    NSMutableArray* game;
 }
 - (int)supply:(NSMutableArray*)c bane:(Card*)b; //method to get necessary number of rows.
+@property NSMutableArray* game;
 @end

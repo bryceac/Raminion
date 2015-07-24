@@ -9,11 +9,13 @@
 #import "Game.h"
 
 @implementation Game
+@synthesize game;
 - (id)init
 {
     if (self = [super init])
     {
         eventCards = [[NSMutableArray alloc] init];
+        game = [[NSMutableArray alloc] init];
     }
     return self;
 }
