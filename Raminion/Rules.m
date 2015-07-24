@@ -17,7 +17,6 @@
     {
         [self colony:nil];
         [self potion:nil];
-        [self event:nil];
         [self bane:nil];
     }
     return self;
