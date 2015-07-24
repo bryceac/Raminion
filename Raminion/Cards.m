@@ -23,6 +23,7 @@
     if (self = [super init])
     {
         cards = [[NSMutableArray alloc] init]; // initialize NSMutableArray object
+        events = [[NSMutableArray alloc] init];
         [self createCards:s]; // create cards array
     }
     return self;
@@ -62,7 +63,14 @@
             card = [[Card alloc] initWithName:[item objectForKey:@"name"] collection:[item objectForKey:@"set"] cost:[[item objectForKey:@"cost"] intValue] potion:false event:false types:types];
         }
         
-        [cards addObject:card]; // add object to array
+        if ([card event])
+        {
+            [events addObject:card];
+        }
+        else
+        {
+            [cards addObject:card]; // add object to array
+        }
     }
 }
 
@@ -92,6 +100,15 @@
         if ([l containsObject:[card collection]]) {
             [cards addObject:card];
         }
+        
+        if ([card event])
+        {
+            [events addObject:card];
+        }
+        else
+        {
+            [cards addObject:card]; // add object to array
+        }
     }
 }
 
@@ -118,9 +135,18 @@
             card = [[Card alloc] initWithName:[item objectForKey:@"name"] collection:[item objectForKey:@"set"] cost:[[item objectForKey:@"cost"] intValue] potion:false event:false types:types];
         }
         
-        if ([c containsObject:[item objectForKey:@"set"]]) {
+        if ([card event] && [c containsObject:[item objectForKey:@"set"]])
+        {
+            [events addObject:card];
+        }
+        else if ([c containsObject:[item objectForKey:@"set"]]) {
             [cards addObject:card]; // add object to array
         }
+        else
+        {
+            
+        }
+        
     }
 }
 

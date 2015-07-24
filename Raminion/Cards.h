@@ -11,6 +11,7 @@
 @interface Cards : NSObject
 {
     NSMutableArray* cards; // variable to hold cards
+    NSMutableArray* events; // variable to hold event cards
 }
 
 // custom initializer methods
@@ -24,6 +25,8 @@
 - (void)createCards:(NSArray*)s limit:(NSMutableSet*)l;
 
 - (void)createCards:(NSArray*)s sets:(NSMutableSet*)c;
+
+- (NSMutableArray*)events;
 
 - (NSMutableArray*)cards;
 
