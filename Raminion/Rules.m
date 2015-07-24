@@ -160,7 +160,7 @@
 {
     BOOL events = false;
     
-    int randValue1 = arc4random_uniform(1);
+    int randValue1 = arc4random_uniform(2);
     
     if (randValue1 == 1)
     {
