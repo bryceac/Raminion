@@ -155,4 +155,10 @@
     
     return bane;
 }
+
+- (int)events
+{
+    int randValue = arc4random_uniform(2);
+    return randValue;
+}
 @end
