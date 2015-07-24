@@ -19,6 +19,7 @@
     SetListController* sets; //variable to deal with sets
     NSMutableArray* cards; // create variable needed for table
     Game* supply; // variable to hold cards used in game
+    NSMutableArray* chosen; // variable to hold sets user selected
 }
 
 // the following makes the variables used for GUI elements to be synthesizable;

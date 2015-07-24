@@ -8,6 +8,7 @@
 
 #import "MasterViewController.h"
 #import "Card.h"
+#import "Cards.h"
 #import "Rules.h"
 #import "Shuffle.h"
 #import "JSON.h"
@@ -56,7 +57,7 @@ JSON* json; // variable that will hold json object
         NSMutableArray* collection = [[NSMutableArray alloc] initWithArray:[[sets.sets sets] array]];
         
         // create array that will hold the sets that the user specified
-        NSMutableArray* chosen = [[NSMutableArray alloc] init];
+        chosen = [[NSMutableArray alloc] init];
         
         NSUInteger index = [selected firstIndex]; // create index variable that will be used to retrieve data
         
@@ -74,7 +75,7 @@ JSON* json; // variable that will hold json object
     {
         NSMutableArray* collection = [[NSMutableArray alloc] initWithArray:[[sets.sets sets] array]];
         
-        NSMutableArray* chosen = [[NSMutableArray alloc] init];
+        chosen = [[NSMutableArray alloc] init];
         
         NSUInteger index = [selected firstIndex];
         
@@ -100,7 +101,7 @@ JSON* json; // variable that will hold json object
     else if (max != 0) {
         NSMutableArray* collection = [[NSMutableArray alloc] initWithArray:[[sets.sets sets] array]];
         
-        NSMutableArray* chosen = [[NSMutableArray alloc] init];
+        chosen = [[NSMutableArray alloc] init];
         
         NSUInteger index = [selected firstIndex];
         
@@ -153,6 +154,13 @@ JSON* json; // variable that will hold json object
 {
     bane = [rules bane:cards]; // retrieve Bane card
     
+    if ([chosen containsObject:@"Adventures"])
+    {
+        Cards* other = [[Cards alloc] initWithSupply:[json supply]]; // object that will retrieve events
+        NSMutableArray* events = [other events];
+        
+        return [supply supply:cards bane:bane events:events];
+    }
     return [supply supply:cards bane:bane];
 }
 
