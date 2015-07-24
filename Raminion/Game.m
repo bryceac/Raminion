@@ -54,8 +54,6 @@
     if (e == 2 && b != nil)
     {
         game = [[NSMutableArray alloc] initWithCapacity:13];
-
-        int randValue = arc4random_uniform((u_int32_t)[events count]);
         
         for (int i = 0; i < 10; i++)
         {
@@ -64,7 +62,15 @@
         
         for (int i = 0; i < 2; i++)
         {
-            [chosen addObject:events[randValue]];
+            int randValue = arc4random_uniform((u_int32_t)[events count]);
+            
+            if ([chosen containsObject:events[randValue]])
+            {
+            }
+            else
+            {
+                [chosen addObject:events[randValue]];
+            }
         }
         
         for (int i = 0; i < [chosen count]; i++)
@@ -101,11 +107,17 @@
             [game addObject:c[i]];
         }
         
-        int randValue = arc4random_uniform((u_int32_t)[events count]);
-        
         for (int i = 0; i < 2; i++)
         {
-            [chosen addObject:events[randValue]];
+            int randValue = arc4random_uniform((u_int32_t)[events count]);
+            
+            if ([chosen containsObject:events[randValue]])
+            {
+            }
+            else
+            {
+                [chosen addObject:events[randValue]];
+            }
         }
         
         for (int i = 0; i < [chosen count]; i++)
