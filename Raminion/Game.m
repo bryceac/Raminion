@@ -92,7 +92,7 @@
         
         [game addObject:b];
     }
-    else if (e == 2)
+    else if (e == 2 && b == nil)
     {
         game = [[NSMutableArray alloc] initWithCapacity:12];
         
@@ -113,7 +113,7 @@
             [game addObject:chosen[i]];
         }
     }
-    else if (e == 1)
+    else if (e == 1 && b == nil)
     {
         game = [[NSMutableArray alloc] initWithCapacity:11];
         
