@@ -63,6 +63,7 @@
         }
         else
         {
+            game = [[NSMutableArray alloc] initWithCapacity:11];
             for (int i = 0; i < 10; i++)
             {
                 [game addObject:c[i]];
@@ -88,7 +89,7 @@
         
         if (events == 2)
         {
-            game = [[NSMutableArray alloc] initWithCapacity:13];
+            game = [[NSMutableArray alloc] initWithCapacity:12];
             
             for (int i = 0; i < 12; i++)
             {
@@ -98,7 +99,7 @@
         }
         else if (events == 1)
         {
-            game = [[NSMutableArray alloc] initWithCapacity:12];
+            game = [[NSMutableArray alloc] initWithCapacity:11];
             
             for (int i = 0; i < 11; i++)
             {
@@ -107,6 +108,8 @@
         }
         else
         {
+            game = [[NSMutableArray alloc] initWithCapacity:10];
+            
             for (int i = 0; i < 10; i++)
             {
                 [game addObject:c[i]];
