@@ -168,7 +168,7 @@
     }
     
     if (events == true) {
-        int randValue2 = arc4random_uniform(2);
+        int randValue2 = arc4random_uniform(2)+1;
         return randValue2;
     }
     
