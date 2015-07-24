@@ -135,7 +135,7 @@
             card = [[Card alloc] initWithName:[item objectForKey:@"name"] collection:[item objectForKey:@"set"] cost:[[item objectForKey:@"cost"] intValue] potion:false event:false types:types];
         }
         
-        if ([card event] && [c containsObject:[item objectForKey:@"set"]])
+        if ([card event] == true && [c containsObject:[item objectForKey:@"set"]])
         {
             [events addObject:card];
         }
@@ -153,6 +153,11 @@
 - (NSMutableArray*)cards
 {
     return cards;
+}
+
+- (NSMutableArray*)events
+{
+    return events;
 }
 
 @end
