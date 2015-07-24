@@ -20,100 +20,121 @@
 
 - (int) supply:(NSMutableArray*)c bane:(Card *)b
 {
-    int events = 0; // variable to count number of events encountered
-    
     // check for bane card, in order to determine decks in supply
     if (b != nil) {
-        for (int h = 0; h < 11; h++) {
-            for (int i = 0; i < [c count]; i++)
-            {
-                if ([c[i] event] == true && events < 2)
-                {
-                    events++;
-                }
-                else
-                {
-                    
-                }
-            }
-        }
         
-        if (events == 2)
+        game = [[NSMutableArray alloc] initWithCapacity:11];
+        
+        for (int i = 0; i < 10; i++)
         {
-            game = [[NSMutableArray alloc] initWithCapacity:13];
-            
-            for (int i = 0; i < 12; i++)
-            {
-                [game addObject:c[i]];
-            }
-            
-            [game addObject:b];
-            
+            [game addObject:c[i]];
         }
-        else if (events == 1)
-        {
-            game = [[NSMutableArray alloc] initWithCapacity:12];
             
-            for (int i = 0; i < 11; i++)
-            {
-                [game addObject:c[i]];
-            }
-            
-            [game addObject:b];
-        }
-        else
-        {
-            game = [[NSMutableArray alloc] initWithCapacity:11];
-            for (int i = 0; i < 10; i++)
-            {
-                [game addObject:c[i]];
-            }
-            
-            [game addObject:b];
-        }
+        [game addObject:b];
     }
     else
     {
-        for (int h = 0; h < 10; h++) {
-            for (int i = 0; i < [c count]; i++)
-            {
-                if ([c[i] event] == true && events < 2)
-                {
-                    events++;
-                }
-                else
-                {
-                }
-            }
+        game = [[NSMutableArray alloc] initWithCapacity:10];
+            
+        for (int i = 0; i < 10; i++)
+        {
+            [game addObject:c[i]];
+        }
+    }
+    return (int)game.count;
+}
+
+- (int)supply:(NSMutableArray *)c bane:(Card *)b events:(NSMutableArray *)events
+{
+    rules = [[Rules alloc] init];
+    
+    int e = [rules events];
+    NSMutableArray* chosen = [[NSMutableArray alloc] init];
+    
+    if (e == 2 && b != nil)
+    {
+        game = [[NSMutableArray alloc] initWithCapacity:13];
+
+        int randValue = arc4random_uniform((u_int32_t)[events count]);
+        
+        for (int i = 0; i < 10; i++)
+        {
+            [game addObject:c[i]];
         }
         
-        if (events == 2)
+        for (int i = 0; i < 2; i++)
         {
-            game = [[NSMutableArray alloc] initWithCapacity:12];
-            
-            for (int i = 0; i < 12; i++)
-            {
-                [game addObject:c[i]];
-            }
-            
+            [chosen addObject:events[randValue]];
         }
-        else if (events == 1)
+        
+        for (int i = 0; i < [chosen count]; i++)
         {
-            game = [[NSMutableArray alloc] initWithCapacity:11];
-            
-            for (int i = 0; i < 11; i++)
-            {
-                [game addObject:c[i]];
-            }
+            [game addObject:chosen[i]];
         }
-        else
+        
+        [game addObject:b];
+    }
+    
+    else if (e == 1 && b != nil)
+    {
+        game = [[NSMutableArray alloc] initWithCapacity:12];
+        
+        for (int i = 0; i < 10; i++)
         {
-            game = [[NSMutableArray alloc] initWithCapacity:10];
-            
-            for (int i = 0; i < 10; i++)
-            {
-                [game addObject:c[i]];
-            }
+            [game addObject:c[i]];
+        }
+
+        int randValue = arc4random_uniform((u_int32_t)[events count]);
+        
+        [chosen addObject:events[randValue]];
+        
+        [game addObject:chosen[0]];
+        
+        [game addObject:b];
+    }
+    else if (e == 2)
+    {
+        game = [[NSMutableArray alloc] initWithCapacity:12];
+        
+        for (int i = 0; i < 10; i++)
+        {
+            [game addObject:c[i]];
+        }
+        
+        int randValue = arc4random_uniform((u_int32_t)[events count]);
+        
+        for (int i = 0; i < 2; i++)
+        {
+            [chosen addObject:events[randValue]];
+        }
+        
+        for (int i = 0; i < [chosen count]; i++)
+        {
+            [game addObject:chosen[i]];
+        }
+    }
+    else if (e == 1)
+    {
+        game = [[NSMutableArray alloc] initWithCapacity:11];
+        
+        for (int i = 0; i < 10; i++)
+        {
+            [game addObject:c[i]];
+        }
+        
+        int randValue = arc4random_uniform((u_int32_t)[events count]);
+        
+        [chosen addObject:events[randValue]];
+        
+        [game addObject:chosen[0]];
+    }
+    else
+    {
+        game = [[NSMutableArray alloc] initWithCapacity:10];
+        
+        for (int i = 0; i < 10; i++)
+        {
+            [game addObject:c[i]];
         }
     }
     return (int)game.count;
