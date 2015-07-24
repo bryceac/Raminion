@@ -35,6 +35,8 @@ JSON* json; // variable that will hold json object
     
     json = [[JSON alloc] initWithFile:@"dominion"]; // initial json object with the file that contains card info
     [sets retrieve:[json supply]];
+    
+    supply = [[Game alloc] init];
 }
 
 - (IBAction)shuffle:(id)sender
@@ -150,7 +152,6 @@ JSON* json; // variable that will hold json object
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
     bane = [rules bane:cards]; // retrieve Bane card
-    Game* supply = [[Game alloc] init];
     
     return [supply supply:cards bane:bane];
 }
@@ -159,7 +160,7 @@ JSON* json; // variable that will hold json object
 - (NSView*)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
     NSTableCellView* cell = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
-    Card* card = cards[row];
+    Card* card = supply.game[row];
         
     if ([tableColumn.identifier isEqualToString:@"card"])
     {

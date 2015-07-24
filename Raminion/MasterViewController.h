@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "SetupViewController.h"
 #import "SetListController.h"
+#import "Game.h"
 
 @interface MasterViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource>
 {
@@ -17,6 +18,7 @@
     SetupViewController* setup; // variable to hold a child view controller
     SetListController* sets; //variable to deal with sets
     NSMutableArray* cards; // create variable needed for table
+    Game* supply; // variable to hold cards used in game
 }
 
 // the following makes the variables used for GUI elements to be synthesizable;
