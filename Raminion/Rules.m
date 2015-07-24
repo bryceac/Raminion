@@ -116,8 +116,23 @@
     return false;
 }
 
+- (int)event:(NSMutableArray*)c
+{
+    int events = 0;
+    for (int i = 0; i < 10; i++) {
+        if ([c[i] isKindOfClass:[Card class]] && [c[i] event]) {
+            events++;
+        }
+        if (events > 2)
+        {
+            events = 2;
+        }
+    }
+        return events;
+}
+
 // bane method checks for a particular card in the initial supply and chooses a card to counter it
-- (Card*)bane:(NSMutableArray *)c
+(Card*)bane:(NSMutableArray*)c
 {
     BOOL yw = false; // variable used to detect presence of Young Witch
     Card* bane = [[Card alloc] init]; // variable that will contain the Bane card

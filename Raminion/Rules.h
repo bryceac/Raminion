@@ -16,5 +16,6 @@
 - (BOOL)ruins:(NSMutableArray*)c; // method to check if ruins are needed
 - (BOOL)shelters:(NSMutableArray*)c; // method to check if shelters are used instead of estates
 - (BOOL)spoils:(NSMutableArray*)c; // method to check if spoils are needed
+- (int)events:(NSMutableArray*)c; //method to return number of events
 - (Card*)bane:(NSMutableArray*)c; // method to determine Bane card
 @end
