@@ -158,7 +158,15 @@
 
 - (int)events
 {
-    int randValue = arc4random_uniform(2);
-    return randValue;
+    BOOL events = false;
+    
+    int randValue1 = arc4random_uniform(1);
+    
+    if (randValue1 == 1)
+    {
+        int randValue2 = arc4random_uniform(2);
+        return randValue2;
+    }
+    return 0;
 }
 @end
