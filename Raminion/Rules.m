@@ -17,6 +17,7 @@
     {
         [self colony:nil];
         [self potion:nil];
+        [self event:nil];
         [self bane:nil];
     }
     return self;
@@ -132,7 +133,7 @@
 }
 
 // bane method checks for a particular card in the initial supply and chooses a card to counter it
-(Card*)bane:(NSMutableArray*)c
+- (Card*)bane:(NSMutableArray*)c
 {
     BOOL yw = false; // variable used to detect presence of Young Witch
     Card* bane = [[Card alloc] init]; // variable that will contain the Bane card
