@@ -9,101 +9,146 @@
 #import "Game.h"
 
 @implementation Game
+@synthesize game;
 - (id)init
 {
     if (self = [super init])
     {
-        eventCards = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
 - (int) supply:(NSMutableArray*)c bane:(Card *)b
 {
-    int events = 0; // variable to count number of events encountered
-    int supply = 0; //variable to count supply
-    
     // check for bane card, in order to determine decks in supply
     if (b != nil) {
-        for (int h = 0; h < 11; h++) {
-            for (int i = 0; i < [c count]; i++)
-            {
-                if ([c[i] event] == true && events < 2)
-                {
-                    events++;
-                    [eventCards addObject:c[i]];
-                }
-                else if ([c[i] event] == true)
-                {
-                    
-                }
-                else
-                {
-                    supply = h+1;
-                }
-            }
-        }
         
-        supply += events;
+        game = [[NSMutableArray alloc] initWithCapacity:11];
         
-        
-        if (supply == 13)
+        for (int i = 0; i < 10; i++)
         {
-            int index = [c indexOfObject:b];
-            [c exchangeObjectAtIndex:index withObjectAtIndex:12];
+            [game addObject:c[i]];
+        }
             
-            [c exchangeObjectAtIndex:[c indexOfObject:eventCards[0]] withObjectAtIndex:11];
-            [c exchangeObjectAtIndex:[c indexOfObject:eventCards[1]] withObjectAtIndex:10];
-        }
-        else if (supply == 12)
-        {
-            int index = [c indexOfObject:b];
-            [c exchangeObjectAtIndex:index withObjectAtIndex:11];
-            
-            [c exchangeObjectAtIndex:[c indexOfObject:eventCards[0]] withObjectAtIndex:10];
-        }
-        else
-        {
-            int index = [c indexOfObject:b];
-            [c exchangeObjectAtIndex:index withObjectAtIndex:10];
-        }
+        [game addObject:b];
     }
     else
     {
-        for (int h = 0; h < 10; h++) {
-            for (int i = 0; i < [c count]; i++)
+        game = [[NSMutableArray alloc] initWithCapacity:10];
+            
+        for (int i = 0; i < 10; i++)
+        {
+            [game addObject:c[i]];
+        }
+    }
+    return (int)game.count;
+}
+
+- (int)supply:(NSMutableArray *)c bane:(Card *)b events:(NSMutableArray *)events
+{
+    rules = [[Rules alloc] init];
+    
+    int e = [rules events];
+    NSMutableArray* chosen = [[NSMutableArray alloc] init];
+    
+    if (e == 2 && b != nil)
+    {
+        game = [[NSMutableArray alloc] initWithCapacity:13];
+        
+        for (int i = 0; i < 10; i++)
+        {
+            [game addObject:c[i]];
+        }
+        
+        for (int i = 0; i < 2; i++)
+        {
+            int randValue = arc4random_uniform((u_int32_t)[events count]);
+            
+            if ([chosen containsObject:events[randValue]])
             {
-                if ([c[i] event] == true && events < 2)
-                {
-                    events++;
-                    [eventCards addObject:c[i]];
-                }
-                else if ([c[i] event] == true)
-                {
-                    
-                }
-                else
-                {
-                    supply = h+1;
-                }
+            }
+            else
+            {
+                [chosen addObject:events[randValue]];
             }
         }
         
-        supply += events;
+        for (int i = 0; i < [chosen count]; i++)
+        {
+            [game addObject:chosen[i]];
+        }
         
-        if (supply == 12)
+        [game addObject:b];
+    }
+    
+    else if (e == 1 && b != nil)
+    {
+        game = [[NSMutableArray alloc] initWithCapacity:12];
+        
+        for (int i = 0; i < 10; i++)
         {
-            [c exchangeObjectAtIndex:[c indexOfObject:eventCards[0]] withObjectAtIndex:11];
-            [c exchangeObjectAtIndex:[c indexOfObject:eventCards[1]] withObjectAtIndex:10];
+            [game addObject:c[i]];
         }
-        else if (supply == 11)
+
+        int randValue = arc4random_uniform((u_int32_t)[events count]);
+        
+        [chosen addObject:events[randValue]];
+        
+        [game addObject:chosen[0]];
+        
+        [game addObject:b];
+    }
+    else if (e == 2 && b == nil)
+    {
+        game = [[NSMutableArray alloc] initWithCapacity:12];
+        
+        for (int i = 0; i < 10; i++)
         {
-            [c exchangeObjectAtIndex:[c indexOfObject:eventCards[0]] withObjectAtIndex:10];
+            [game addObject:c[i]];
         }
-        else
+        
+        for (int i = 0; i < 2; i++)
         {
+            int randValue = arc4random_uniform((u_int32_t)[events count]);
+            
+            if ([chosen containsObject:events[randValue]])
+            {
+            }
+            else
+            {
+                [chosen addObject:events[randValue]];
+            }
+        }
+        
+        for (int i = 0; i < [chosen count]; i++)
+        {
+            [game addObject:chosen[i]];
         }
     }
-    return supply;
+    else if (e == 1 && b == nil)
+    {
+        game = [[NSMutableArray alloc] initWithCapacity:11];
+        
+        for (int i = 0; i < 10; i++)
+        {
+            [game addObject:c[i]];
+        }
+        
+        int randValue = arc4random_uniform((u_int32_t)[events count]);
+        
+        [chosen addObject:events[randValue]];
+        
+        [game addObject:chosen[0]];
+    }
+    else
+    {
+        game = [[NSMutableArray alloc] initWithCapacity:10];
+        
+        for (int i = 0; i < 10; i++)
+        {
+            [game addObject:c[i]];
+        }
+    }
+    return (int)game.count;
 }
 @end
