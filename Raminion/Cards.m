@@ -97,17 +97,16 @@
         }
         
         // check if card belongs to one of the chosen sets, and if so, add it to the array
-        if ([l containsObject:[card collection]]) {
+        if ([l containsObject:[card collection]] && [card event] != true) {
             [cards addObject:card];
         }
         
-        if ([card event])
+        else if ([card event])
         {
             [events addObject:card];
         }
         else
         {
-            [cards addObject:card]; // add object to array
         }
     }
 }
